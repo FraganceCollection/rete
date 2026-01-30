@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support & FAQ - Perfumo</title>
+    <meta name="description" content="Get help with Perfumo app: FAQ, troubleshooting, contact support for AI-powered perfume discovery.">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Page-specific styles */
+        .faq-section {
+            padding: 80px 0;
+        }
+
+        .faq-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        .faq-category {
+            background: var(--surface-variant);
+            border-radius: var(--radius-lg);
+            padding: 30px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .faq-category h3 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .faq-item {
+            margin-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: var(--accent);
+        }
+
+        .faq-answer {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            padding-left: 0;
+        }
+
+        .faq-toggle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 80px 0;
+            background: var(--surface-variant);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+
+        .contact-card {
+            background: var(--surface);
+            padding: 40px 30px;
+            border-radius: var(--radius-lg);
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .contact-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--text-primary);
+        }
+
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        /* Troubleshooting */
+        .troubleshooting {
+            padding: 80px 0;
+        }
+
+        .troubleshooting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .trouble-card {
+            background: var(--surface);
+            border: 2px solid var(--accent-light);
+            border-radius: var(--radius-md);
+            padding: 25px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .trouble-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-3px);
+        }
+
+        .trouble-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .trouble-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .trouble-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .faq-categories {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content container">
+            <a href="../" class="logo">✨ Perfumo</a>
+            <div class="nav-links">
+                <a href="../">Home</a>
+                <a href="../perfumo/">Features</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content container">
+            <h1>Support & FAQ</h1>
+            <p>Get help with Perfumo - Your AI-powered fragrance companion</p>
+        </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+
+            <div class="faq-categories">
+                <!-- Getting Started -->
+                <div class="faq-category">
+                    <h3>Getting Started</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do I start using Perfumo?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Download the app from App Store or Google Play. You can start using it immediately - no account required! The app includes a database of 24,000+ fragrances that works completely offline.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Do I need to create an account?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            No! Perfumo works perfectly without an account. Sign in with Google or Apple is optional and only needed for cloud sync and AI recommendations.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is the app free?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! Core features like browsing perfumes, collection management, and search are completely free. Premium features like AI recommendations and weather integration are $4.99/month or $44.99/year.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Features -->
+                <div class="faq-category">
+                    <h3>Features</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How do AI recommendations work?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Our AI analyzes your collection, preferences, current weather, and occasion to suggest perfect fragrances. It uses advanced algorithms to understand your taste and recommend new scents you'll love.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I use the app offline?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Absolutely! Perfumo is designed offline-first. All 24,000+ fragrances, your collection, and search functionality work without internet. Only AI features and weather updates require connection.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How accurate is the perfume database?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Our database includes 24,000+ fragrances with detailed information about notes, accords, ratings, and reviews. Data is sourced from reputable fragrance communities and regularly updated.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical -->
+                <div class="faq-category">
+                    <h3>Technical</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What devices are supported?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            iOS 13.0+ (iPhone & iPad) and Android 5.0+ (API Level 21+). The app is optimized for both phones and tablets.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            How much storage does the app use?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Approximately 50MB for the app and database. Additional storage is used for cached images, but this is automatically managed and cleaned up.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is my data safe and private?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! Your data stays on your device by default. Cloud sync is optional and uses encrypted connections. We don't track users or sell personal data.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Premium -->
+                <div class="faq-category">
+                    <h3>Premium</h3>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            What's included in Premium?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            AI-powered recommendations, daily weather-based suggestions, collection analysis, advanced search filters, and ad-free experience.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Can I cancel my subscription?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes, you can cancel anytime through your App Store or Google Play account settings. You'll continue to have access until the end of your billing period.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            Is there a free trial?
+                            <span class="faq-toggle">▼</span>
+                        </div>
+                        <div class="faq-answer">
+                            Yes! Premium features include a 7-day free trial. No commitment required.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Troubleshooting -->
+    <section class="troubleshooting">
+        <div class="container">
+            <h2 class="section-title">Quick Troubleshooting</h2>
+
+            <div class="troubleshooting-grid">
+                <div class="trouble-card">
+                    <span class="icon">📱</span>
+                    <h4>App Won't Open</h4>
+                    <p>Try restarting your device or reinstalling the app from the store</p>
+                </div>
+
+                <div class="trouble-card">
+                    <span class="icon">🔍</span>
+                    <h4>Search Not Working</h4>
+                    <p>Check your spelling or try broader search terms. Database works offline</p>
+                </div>
+
+                <div class="trouble-card">
+                    <span class="icon">🤖</span>
+                    <h4>AI Features Not Working</h4>
+                    <p>Ensure you have internet connection and Premium subscription active</p>
+                </div>
+
+                <div class="trouble-card">
+                    <span class="icon">☁️</span>
+                    <h4>Sync Issues</h4>
+                    <p>Check internet connection and make sure you're signed in</p>
+                </div>
+
+                <div class="trouble-card">
+                    <span class="icon">🖼️</span>
+                    <h4>Images Not Loading</h4>
+                    <p>Images are cached automatically. Check internet connection for new images</p>
+                </div>
+
+                <div class="trouble-card">
+                    <span class="icon">💳</span>
+                    <h4>Subscription Issues</h4>
+                    <p>Check your App Store/Google Play purchase history and subscription status</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Still Need Help?</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <span class="contact-icon">📧</span>
+                    <h3>Email Support</h3>
+                    <p>Get personalized help from our support team. We typically respond within 24 hours.</p>
+                    <a href="mailto:fragrancecoach.app@gmail.com?subject=Perfumo Support Request" class="btn btn-primary">
+                        Email Us
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">🗑️</span>
+                    <h3>Delete Account</h3>
+                    <p>Need to delete your account and data? We make it simple and respect your privacy.</p>
+                    <a href="../delete-account.html" class="btn btn-primary">
+                        Delete Account
+                    </a>
+                </div>
+
+                <div class="contact-card">
+                    <span class="contact-icon">📄</span>
+                    <h3>Privacy Policy</h3>
+                    <p>Learn about how we protect your data and what information we collect.</p>
+                    <a href="../perfumo-privacy/" class="btn btn-primary">
+                        View Policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Perfumo. Made with care for fragrance enthusiasts.</p>
+            <div style="margin-top: 15px;">
+                <a href="../">Home</a>
+                <a href="../perfumo/">Features</a>
+                <a href="../about/">About</a>
+                <a href="../perfumo-privacy/">Privacy</a>
+                <a href="../terms/">Terms</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Toggle Functionality
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                const isActive = faqItem.classList.contains('active');
+
+                // Close all other FAQ items
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

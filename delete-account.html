@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Your Account - Perfumo</title>
+    <meta name="description" content="Request deletion of your Perfumo account and associated data">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <link rel="stylesheet" href="styles.css">
+
+    <style>
+        /* Page-specific styles */
+        .deletion-section {
+            padding: 60px 0;
+        }
+
+        .deletion-card {
+            background: var(--surface);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            margin-bottom: 24px;
+            border: 1px solid var(--border);
+        }
+
+        .deletion-card h2 {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--accent-light);
+        }
+
+        .deletion-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            color: var(--accent);
+        }
+
+        .deletion-card p {
+            color: var(--text-primary);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .deletion-card ol,
+        .deletion-card ul {
+            margin: 16px 0 20px 24px;
+            color: var(--text-primary);
+        }
+
+        .deletion-card li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .delete-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--accent);
+            color: white;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .delete-btn:hover {
+            background: var(--accent-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(182, 138, 58, 0.3);
+        }
+
+        .contact-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: transparent;
+            color: var(--accent);
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            text-decoration: none;
+            font-family: var(--font-body);
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            border: 2px solid var(--accent);
+        }
+
+        .contact-btn:hover {
+            background: var(--accent-muted);
+        }
+
+        .warning-note {
+            background: #FEF7E8;
+            padding: 20px 24px;
+            border-radius: var(--radius-md);
+            margin: 24px 0;
+            border-left: 4px solid var(--warning);
+        }
+
+        .warning-note p {
+            margin: 0;
+            color: var(--text-primary);
+        }
+
+        .compliance-note {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-top: 40px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content container">
+            <a href="./" class="logo">✨ Perfumo</a>
+            <div class="nav-links">
+                <a href="./">Home</a>
+                <a href="./perfumo/">Features</a>
+                <a href="./support/">Support</a>
+                <a href="./perfumo-privacy/">Privacy</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content container">
+            <h1>Delete Your Account</h1>
+            <p>We're sorry to see you go. Follow the steps below to delete your account and data.</p>
+        </div>
+    </header>
+
+    <!-- Content -->
+    <main class="deletion-section">
+        <div class="container-narrow">
+            <div class="deletion-card">
+                <h2>How to Request Account Deletion</h2>
+                <ol>
+                    <li>Send an email to our support team using the button below</li>
+                    <li>Include the email address you used to sign in (Google or Apple)</li>
+                    <li>We'll confirm the deletion within 48 hours</li>
+                </ol>
+                <a href="mailto:fragrancecoach.app@gmail.com?subject=Account Deletion Request - Perfumo&body=Please delete my Perfumo account and associated data.%0A%0AMy sign-in email: [Enter your email here]%0ASign-in method: [Google / Apple]" class="delete-btn">
+                    Request Account Deletion
+                </a>
+            </div>
+
+            <div class="deletion-card">
+                <h2>What Data Gets Deleted</h2>
+
+                <h3>Immediately Deleted:</h3>
+                <ul>
+                    <li>Profile information (name, email, photo)</li>
+                    <li>Cloud-synced collection and wishlist data</li>
+                    <li>App preferences and settings</li>
+                    <li>Account authentication records</li>
+                </ul>
+
+                <h3>Local Data (Deleted by Uninstalling App):</h3>
+                <ul>
+                    <li>Perfume collection and wishlist stored locally</li>
+                    <li>Personal preferences and notes</li>
+                    <li>Local app settings and cache</li>
+                </ul>
+            </div>
+
+            <div class="deletion-card">
+                <h2>Data Retention Policy</h2>
+                <p><strong>Most data is deleted immediately</strong> upon request. Some records may be retained for up to 30 days for legal compliance:</p>
+                <ul>
+                    <li>Purchase transaction records (handled by Apple/Google/RevenueCat)</li>
+                    <li>Anonymous crash reports for app improvement</li>
+                </ul>
+                <p>No personal information is retained beyond the deletion request.</p>
+            </div>
+
+            <div class="deletion-card">
+                <h2>Alternative: Local Data Only</h2>
+                <div class="highlight-box">
+                    <p>If you only used Perfumo locally (without signing in with Google or Apple), simply <strong>uninstalling the app</strong> will remove all your data. No additional steps needed.</p>
+                </div>
+            </div>
+
+            <div class="deletion-card">
+                <h2>Need Help?</h2>
+                <p>If you have questions about account deletion or data privacy:</p>
+                <a href="mailto:fragrancecoach.app@gmail.com?subject=Account Deletion Question - Perfumo" class="contact-btn">
+                    Contact Support
+                </a>
+            </div>
+
+            <div class="compliance-note">
+                <p>This page complies with Apple App Store and Google Play Store data deletion requirements.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Perfumo. Made with care for fragrance enthusiasts.</p>
+            <div style="margin-top: 15px;">
+                <a href="./">Home</a>
+                <a href="./perfumo-privacy/">Privacy Policy</a>
+                <a href="./terms/">Terms of Use</a>
+                <a href="./support/">Support</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

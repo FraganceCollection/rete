@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfumo App - Features & Screenshots</title>
+    <meta name="description" content="Explore all features of Perfumo: AI recommendations, weather integration, collection management, and 24,000+ perfume database.">
+    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
+    <link rel="stylesheet" href="../styles.css">
+
+    <style>
+        /* Page-specific styles */
+        .hero {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Features Grid */
+        .features-section {
+            padding: 100px 0;
+        }
+
+        .features-detailed {
+            display: grid;
+            gap: 60px;
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .feature-row:nth-child(even) {
+            direction: rtl;
+        }
+
+        .feature-row:nth-child(even) > * {
+            direction: ltr;
+        }
+
+        .feature-content h3 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .feature-content p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .feature-list li {
+            padding: 8px 0;
+            color: var(--text-secondary);
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .feature-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .feature-visual {
+            background: var(--surface-variant);
+            border-radius: var(--radius-lg);
+            padding: 40px;
+            text-align: center;
+            border: 2px dashed var(--accent-light);
+        }
+
+        .feature-visual .placeholder {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .feature-visual h4 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .feature-visual p {
+            color: var(--text-secondary);
+        }
+
+        /* Screenshots Section */
+        .screenshots {
+            padding: 100px 0;
+            background: var(--surface-variant);
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .screenshot-card {
+            background: var(--surface);
+            border-radius: var(--radius-xl);
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            text-align: center;
+            transition: transform 0.3s ease;
+            border: 1px solid var(--border);
+        }
+
+        .screenshot-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .screenshot-placeholder {
+            background: linear-gradient(135deg, var(--accent-muted), white);
+            border-radius: var(--radius-xl);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin-bottom: 20px;
+            border: 2px solid var(--accent-light);
+        }
+
+        .screenshot-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--text-primary);
+        }
+
+        .screenshot-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Premium Features */
+        .premium {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 70% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .premium-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .premium-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border-radius: var(--radius-lg);
+            padding: 30px 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .premium-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .premium-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .pricing {
+            margin-top: 40px;
+            font-size: 1.2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .price {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 10px;
+        }
+
+        /* Technical Specs */
+        .specs {
+            padding: 100px 0;
+        }
+
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .spec-card {
+            background: var(--surface-variant);
+            padding: 30px;
+            border-radius: var(--radius-lg);
+            border-left: 4px solid var(--accent);
+        }
+
+        .spec-card h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .spec-list {
+            list-style: none;
+        }
+
+        .spec-list li {
+            padding: 5px 0;
+            color: var(--text-secondary);
+        }
+
+        .spec-list strong {
+            color: var(--text-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .feature-row:nth-child(even) {
+                direction: ltr;
+            }
+
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content container">
+            <a href="../" class="logo">✨ Perfumo</a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#premium">Premium</a>
+                <a href="../support/">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>✨ Perfumo</h1>
+            <p>AI-powered perfume discovery with weather integration and smart collection management</p>
+            <div class="download-buttons">
+                <a href="#" class="btn btn-white">
+                    Download for iOS
+                </a>
+                <a href="#" class="btn btn-white">
+                    Download for Android
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Features -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Powerful Features for Perfume Enthusiasts</h2>
+
+            <div class="features-detailed">
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>AI-Powered Recommendations</h3>
+                        <p>Get personalized fragrance suggestions based on your collection, preferences, and current weather conditions using advanced AI algorithms.</p>
+                        <ul class="feature-list">
+                            <li>Daily weather-based recommendations</li>
+                            <li>Collection analysis and insights</li>
+                            <li>Personality-based fragrance matching</li>
+                            <li>Seasonal and occasion-specific suggestions</li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <span class="placeholder">🧠</span>
+                        <h4>Smart AI Engine</h4>
+                        <p>Powered by OpenAI GPT-4 for intelligent recommendations</p>
+                    </div>
+                </div>
+
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>Massive Perfume Database</h3>
+                        <p>Explore our comprehensive database of 24,000+ fragrances with detailed information about notes, accords, ratings, and reviews.</p>
+                        <ul class="feature-list">
+                            <li>24,000+ perfumes from 1,000+ brands</li>
+                            <li>Detailed notes breakdown (top, middle, base)</li>
+                            <li>Community ratings and reviews</li>
+                            <li>Advanced search and filtering</li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <span class="placeholder">📚</span>
+                        <h4>Complete Database</h4>
+                        <p>Everything you need to know about fragrances</p>
+                    </div>
+                </div>
+
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>Weather Integration</h3>
+                        <p>Receive daily recommendations perfectly matched to your local weather conditions and seasonal preferences.</p>
+                        <ul class="feature-list">
+                            <li>Real-time weather data integration</li>
+                            <li>Temperature-appropriate suggestions</li>
+                            <li>Humidity and season considerations</li>
+                            <li>Location-based recommendations</li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <span class="placeholder">🌤️</span>
+                        <h4>Weather Smart</h4>
+                        <p>Perfect scent for every weather condition</p>
+                    </div>
+                </div>
+
+                <div class="feature-row">
+                    <div class="feature-content">
+                        <h3>Offline-First Design</h3>
+                        <p>Access your entire collection and fragrance database even without internet connection. Your data stays private and secure.</p>
+                        <ul class="feature-list">
+                            <li>Complete offline functionality</li>
+                            <li>Local SQLite database</li>
+                            <li>Privacy-focused design</li>
+                            <li>Optional cloud sync</li>
+                        </ul>
+                    </div>
+                    <div class="feature-visual">
+                        <span class="placeholder">🔒</span>
+                        <h4>Privacy First</h4>
+                        <p>Your data stays on your device</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section id="screenshots" class="screenshots">
+        <div class="container">
+            <h2 class="section-title">App Screenshots</h2>
+
+            <div class="screenshots-grid">
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">🏠</div>
+                    <h4>Home Screen</h4>
+                    <p>Beautiful interface with daily recommendations and quick access to your collection</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">🔍</div>
+                    <h4>Search & Discovery</h4>
+                    <p>Advanced search with filters for notes, brands, years, and more</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">📋</div>
+                    <h4>Collection Management</h4>
+                    <p>Organize your fragrances, create wishlists, and track favorites</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">🤖</div>
+                    <h4>AI Recommendations</h4>
+                    <p>Personalized suggestions based on weather, mood, and preferences</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">📊</div>
+                    <h4>Collection Analytics</h4>
+                    <p>Insights about your collection patterns and preferences</p>
+                </div>
+
+                <div class="screenshot-card">
+                    <div class="screenshot-placeholder">⚙️</div>
+                    <h4>Settings & Profile</h4>
+                    <p>Customize your experience and manage preferences</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Features -->
+    <section id="premium" class="premium">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Premium Features</h2>
+            <p style="font-size: 1.2rem; opacity: 0.9; margin-bottom: 20px;">
+                Unlock the full potential of Perfumo
+            </p>
+
+            <div class="premium-features">
+                <div class="premium-card">
+                    <span class="icon">🧠</span>
+                    <h4>AI Collection Analysis</h4>
+                    <p>Deep insights into your fragrance preferences and collection patterns</p>
+                </div>
+
+                <div class="premium-card">
+                    <span class="icon">🌤️</span>
+                    <h4>Daily Weather Recommendations</h4>
+                    <p>Personalized daily suggestions based on weather and your collection</p>
+                </div>
+
+                <div class="premium-card">
+                    <span class="icon">🎯</span>
+                    <h4>Advanced Recommendation Engine</h4>
+                    <p>More sophisticated AI recommendations for special occasions</p>
+                </div>
+
+                <div class="premium-card">
+                    <span class="icon">📈</span>
+                    <h4>Collection Statistics</h4>
+                    <p>Detailed analytics about your fragrance collection and preferences</p>
+                </div>
+            </div>
+
+            <div class="pricing">
+                <p>Choose your plan:</p>
+                <span class="price">$4.99/month</span> or <span class="price">$44.99/year</span>
+                <p style="margin-top: 20px; opacity: 0.8;">7-day free trial • Cancel anytime</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Specifications -->
+    <section class="specs">
+        <div class="container">
+            <h2 class="section-title">Technical Specifications</h2>
+
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <h4>Architecture</h4>
+                    <ul class="spec-list">
+                        <li><strong>Framework:</strong> React Native + Expo SDK 53</li>
+                        <li><strong>Database:</strong> SQLite (embedded, 24K+ records)</li>
+                        <li><strong>State Management:</strong> Zustand + React Context</li>
+                        <li><strong>Styling:</strong> NativeWind (Tailwind CSS)</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Integrations</h4>
+                    <ul class="spec-list">
+                        <li><strong>AI:</strong> OpenAI GPT-4 API</li>
+                        <li><strong>Weather:</strong> WeatherAPI.com</li>
+                        <li><strong>Authentication:</strong> Google & Apple OAuth</li>
+                        <li><strong>Payments:</strong> RevenueCat + In-App Purchase</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Compatibility</h4>
+                    <ul class="spec-list">
+                        <li><strong>iOS:</strong> 13.0+ (iPhone & iPad)</li>
+                        <li><strong>Android:</strong> API Level 21+ (Android 5.0+)</li>
+                        <li><strong>Storage:</strong> ~50MB app + database</li>
+                        <li><strong>Offline:</strong> Full functionality without internet</li>
+                    </ul>
+                </div>
+
+                <div class="spec-card">
+                    <h4>Privacy & Security</h4>
+                    <ul class="spec-list">
+                        <li><strong>Data Storage:</strong> Local-first (AsyncStorage + SQLite)</li>
+                        <li><strong>Cloud Sync:</strong> Optional, user-controlled</li>
+                        <li><strong>Encryption:</strong> All network traffic encrypted (HTTPS)</li>
+                        <li><strong>Privacy:</strong> No tracking, minimal data collection</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 Perfumo. Made with care for fragrance enthusiasts.</p>
+            <div style="margin-top: 20px;">
+                <a href="../">Home</a>
+                <a href="../support/">Support</a>
+                <a href="../perfumo-privacy/">Privacy</a>
+                <a href="../about/">About</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
