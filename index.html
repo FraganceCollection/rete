@@ -379,51 +379,58 @@
             background: var(--surface);
         }
 
-        .share-content {
-            display: flex;
-            align-items: center;
-            gap: 48px;
+        .share-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .share-header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            max-width: 520px;
+            margin: 0 auto;
+        }
+
+        .share-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
             max-width: 900px;
             margin: 0 auto;
         }
 
-        .share-text {
-            flex: 1;
+        .share-card {
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            border: 1px solid var(--border);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            transition: all 0.2s;
         }
 
-        .share-text h2 {
+        .share-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+        }
+
+        .share-card img {
+            width: 100%;
+            display: block;
+        }
+
+        .share-card-label {
+            text-align: center;
+            padding: 12px;
             font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 700;
-            margin-bottom: 16px;
-            color: var(--text-primary);
-            letter-spacing: -0.3px;
-        }
-
-        .share-text p {
+            font-weight: 600;
+            font-size: 0.9rem;
             color: var(--text-secondary);
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        .share-images {
-            display: flex;
-            gap: 16px;
-            flex-shrink: 0;
-        }
-
-        .share-images .phone-frame {
-            width: 180px;
+            background: var(--background);
         }
 
         @media (max-width: 768px) {
-            .share-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .share-images .phone-frame {
-                width: 160px;
+            .share-images {
+                grid-template-columns: 1fr;
+                max-width: 400px;
             }
         }
 
@@ -703,20 +710,48 @@
     <!-- Share -->
     <section class="share-section">
         <div class="container">
-            <div class="share-content">
-                <div class="share-text">
-                    <div class="section-label">Share</div>
-                    <h2>Share with your friends</h2>
-                    <p>Export your collection and analysis as beautiful shareable pages. Show off your fragrances, compare collections, or send gift ideas to friends and family.</p>
+            <div class="share-header">
+                <div class="section-label">Share</div>
+                <h2 class="section-title">Share with your friends</h2>
+                <p>Export your collection and analysis as beautiful shareable pages. Perfect for gift ideas or comparing collections.</p>
+            </div>
+            <div class="share-images">
+                <div class="share-card">
+                    <img src="images/export-collection.png" alt="Shared Collection">
+                    <div class="share-card-label">Collection Export</div>
                 </div>
-                <div class="share-images">
-                    <div class="phone-frame">
-                        <img src="images/export-collection.png" alt="Shared Collection">
-                    </div>
-                    <div class="phone-frame">
-                        <img src="images/export-analysis.png" alt="Shared Analysis">
-                    </div>
+                <div class="share-card">
+                    <img src="images/export-analysis.png" alt="Shared Analysis">
+                    <div class="share-card-label">Analysis Export</div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="languages">
+        <div class="container">
+            <div class="section-label">Global</div>
+            <h2 class="section-title">Available in 18 languages</h2>
+            <div class="languages-grid">
+                <span class="lang-pill">English</span>
+                <span class="lang-pill">Espanol</span>
+                <span class="lang-pill">Francais</span>
+                <span class="lang-pill">Portugues</span>
+                <span class="lang-pill">Deutsch</span>
+                <span class="lang-pill">Italiano</span>
+                <span class="lang-pill">Nederlands</span>
+                <span class="lang-pill">Polski</span>
+                <span class="lang-pill">Turkce</span>
+                <span class="lang-pill">Русский</span>
+                <span class="lang-pill">العربية</span>
+                <span class="lang-pill">हिन्दी</span>
+                <span class="lang-pill">日本語</span>
+                <span class="lang-pill">한국어</span>
+                <span class="lang-pill">中文</span>
+                <span class="lang-pill">Bahasa Indonesia</span>
+                <span class="lang-pill">Tieng Viet</span>
+                <span class="lang-pill">ภาษาไทย</span>
             </div>
         </div>
     </section>
@@ -799,34 +834,6 @@
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Languages -->
-    <section class="languages">
-        <div class="container">
-            <div class="section-label">Global</div>
-            <h2 class="section-title">Available in 18 languages</h2>
-            <div class="languages-grid">
-                <span class="lang-pill">English</span>
-                <span class="lang-pill">Espanol</span>
-                <span class="lang-pill">Francais</span>
-                <span class="lang-pill">Portugues</span>
-                <span class="lang-pill">Deutsch</span>
-                <span class="lang-pill">Italiano</span>
-                <span class="lang-pill">Nederlands</span>
-                <span class="lang-pill">Polski</span>
-                <span class="lang-pill">Turkce</span>
-                <span class="lang-pill">Русский</span>
-                <span class="lang-pill">العربية</span>
-                <span class="lang-pill">हिन्दी</span>
-                <span class="lang-pill">日本語</span>
-                <span class="lang-pill">한국어</span>
-                <span class="lang-pill">中文</span>
-                <span class="lang-pill">Bahasa Indonesia</span>
-                <span class="lang-pill">Tieng Viet</span>
-                <span class="lang-pill">ภาษาไทย</span>
             </div>
         </div>
     </section>
