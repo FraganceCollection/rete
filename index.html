@@ -3,18 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silaro - AI-Powered Perfume Discovery</title>
-    <meta name="description" content="Discover, organize, and get AI-powered recommendations for your perfect fragrance with Silaro mobile app.">
+    <title>Silaro - Your Fragrance Companion</title>
+    <meta name="description" content="Organize your fragrance collection, get AI-powered daily recommendations, analyze your taste profile, and learn about perfumery.">
     <meta name="keywords" content="perfume app, fragrance collection, scent discovery, AI recommendations, perfume tracker">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Silaro - AI-Powered Perfume Discovery">
-    <meta property="og:description" content="Discover your perfect scent with AI recommendations, weather-based suggestions, and a database of 24,000+ fragrances.">
-    <meta property="og:url" content="https://fragancecollection.github.io/rete/">
+    <meta property="og:title" content="Silaro - Your Fragrance Companion">
+    <meta property="og:description" content="Organize your fragrance collection, get AI-powered daily recommendations, and learn about perfumery.">
+    <meta property="og:image" content="images/app-icon.png">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+    <link rel="icon" type="image/png" href="images/app-icon.png">
+    <link rel="apple-touch-icon" href="images/app-icon.png">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -23,7 +24,6 @@
 
     <style>
         :root {
-            /* App Design System Colors */
             --accent: #B68A3A;
             --accent-light: #E7D7B0;
             --accent-dark: #8B6914;
@@ -35,439 +35,679 @@
             --text-secondary: #3A3A3F;
             --text-tertiary: #4A4A4A;
             --border: rgba(14, 14, 16, 0.08);
-            --success: #1E8E3E;
-            --warning: #C37E00;
-            --error: #B00020;
-
-            /* Typography */
             --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
             --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
-            /* Spacing */
             --radius-sm: 8px;
             --radius-md: 12px;
             --radius-lg: 16px;
             --radius-xl: 20px;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: var(--font-body);
             line-height: 1.6;
             color: var(--text-primary);
             background: var(--background);
+            -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 24px;
         }
 
-        /* Header */
-        .header {
-            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-            color: white;
-            padding: 100px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .header::before {
-            content: '';
-            position: absolute;
+        /* ── Navigation ── */
+        .nav {
+            background: var(--surface);
+            padding: 14px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            position: sticky;
             top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
-            pointer-events: none;
+            z-index: 100;
         }
 
-        .header-content {
-            position: relative;
-            z-index: 1;
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        .header h1 {
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+        }
+
+        .logo span {
             font-family: var(--font-heading);
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-
-        .header p {
             font-size: 1.3rem;
-            margin-bottom: 40px;
-            opacity: 0.95;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            font-weight: 700;
+            color: var(--accent);
         }
 
-        .cta-buttons {
+        .nav-links {
+            display: flex;
+            gap: 28px;
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* ── Hero ── */
+        .hero {
+            padding: 80px 0 60px;
+            text-align: center;
+        }
+
+        .hero-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            margin: 0 auto 24px;
+        }
+
+        .hero h1 {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 520px;
+            margin: 0 auto 36px;
+        }
+
+        .store-badges {
             display: flex;
             gap: 16px;
             justify-content: center;
             flex-wrap: wrap;
         }
 
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 16px 32px;
-            border-radius: var(--radius-md);
-            text-decoration: none;
-            font-family: var(--font-body);
-            font-weight: 600;
-            font-size: 1rem;
-            transition: all 0.2s ease;
-            border: 2px solid transparent;
+        .store-badges a {
+            display: inline-block;
+            transition: transform 0.2s;
         }
 
-        .btn-primary {
-            background: white;
-            color: var(--accent);
+        .store-badges a:hover { transform: scale(1.05); }
+
+        .store-badges img {
+            height: 48px;
+            border-radius: 8px;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: white;
-            border-color: rgba(255,255,255,0.4);
-        }
-
-        .btn-secondary:hover {
-            background: rgba(255,255,255,0.1);
-            border-color: white;
-        }
-
-        /* Features Section */
+        /* ── Features ── */
         .features {
-            padding: 100px 0;
+            padding: 80px 0;
             background: var(--surface);
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 12px;
         }
 
         .section-title {
             font-family: var(--font-heading);
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 48px;
             color: var(--text-primary);
-            letter-spacing: -0.5px;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
-            margin-bottom: 60px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            letter-spacing: -0.3px;
         }
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 32px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
         }
 
         .feature-card {
             background: var(--background);
-            padding: 32px;
+            padding: 28px 24px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
-            transition: all 0.2s ease;
-            text-align: left;
+            transition: all 0.2s;
         }
 
         .feature-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.06);
             border-color: var(--accent-light);
         }
 
         .feature-icon {
-            width: 56px;
-            height: 56px;
+            width: 48px;
+            height: 48px;
             background: var(--accent-muted);
             border-radius: var(--radius-md);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            margin-bottom: 16px;
+        }
+
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .feature-card h3 {
             font-family: var(--font-heading);
-            font-size: 1.25rem;
+            font-size: 1.1rem;
             font-weight: 600;
-            margin-bottom: 12px;
+            margin-bottom: 8px;
             color: var(--text-primary);
         }
 
         .feature-card p {
             color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* ── Screenshots ── */
+        .screenshots {
+            padding: 80px 0;
+            overflow: hidden;
+        }
+
+        .screenshots-scroll {
+            display: flex;
+            gap: 32px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 12px;
+        }
+
+        .phone-frame {
+            width: 220px;
+            flex-shrink: 0;
+            background: #1a1a1a;
+            border-radius: 36px;
+            padding: 12px 8px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1) inset;
+        }
+
+        .phone-frame img {
+            width: 100%;
+            border-radius: 24px;
+            display: block;
+        }
+
+        .phone-label {
+            text-align: center;
+            margin-top: 16px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* ── FAQ ── */
+        .faq {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .faq-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 20px 0;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: left;
+        }
+
+        .faq-question:hover { color: var(--accent); }
+
+        .faq-chevron {
+            width: 20px;
+            height: 20px;
+            stroke: var(--text-tertiary);
+            fill: none;
+            stroke-width: 2;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+            margin-left: 16px;
+        }
+
+        .faq-item.active .faq-chevron {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 20px;
+            color: var(--text-secondary);
             font-size: 0.95rem;
             line-height: 1.7;
         }
 
-        /* Stats Section */
-        .stats {
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        /* ── Download CTA ── */
+        .download-cta {
             padding: 80px 0;
-            background: var(--accent);
+            text-align: center;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
             color: white;
+            position: relative;
+            overflow: hidden;
         }
 
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            text-align: center;
+        .download-cta::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 30% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
         }
 
-        .stat-number {
+        .download-cta h2 {
             font-family: var(--font-heading);
-            font-size: 3rem;
-            font-weight: 800;
-            display: block;
-            margin-bottom: 8px;
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            position: relative;
         }
 
-        .stat-label {
-            font-size: 1rem;
+        .download-cta p {
+            font-size: 1.05rem;
             opacity: 0.9;
+            margin-bottom: 32px;
+            position: relative;
         }
 
-        /* App Section */
-        .app-section {
-            padding: 100px 0;
-            text-align: center;
-            background: var(--background);
+        .download-cta .store-badges {
+            position: relative;
         }
 
-        .app-links {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
-            flex-wrap: wrap;
-        }
-
-        .app-link {
-            display: inline-block;
-            transition: transform 0.2s ease;
-        }
-
-        .app-link:hover {
-            transform: scale(1.05);
-        }
-
-        .app-link img {
-            height: 56px;
-            border-radius: var(--radius-sm);
-        }
-
-        /* Footer */
+        /* ── Footer ── */
         .footer {
             background: var(--text-primary);
             color: white;
-            padding: 60px 0 30px;
+            padding: 40px 0 24px;
         }
 
         .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 32px;
+            margin-bottom: 32px;
         }
 
-        .footer-section h3 {
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .footer-brand span {
             font-family: var(--font-heading);
+            font-weight: 700;
             font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 20px;
             color: var(--accent-light);
         }
 
-        .footer-section p {
-            color: rgba(255,255,255,0.7);
-            font-size: 0.95rem;
-            line-height: 1.6;
+        .footer-links {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
         }
 
-        .footer-section a {
-            color: rgba(255,255,255,0.7);
+        .footer-links a {
+            color: rgba(255,255,255,0.65);
             text-decoration: none;
-            display: block;
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-            transition: color 0.2s ease;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
 
-        .footer-section a:hover {
-            color: var(--accent-light);
-        }
+        .footer-links a:hover { color: var(--accent-light); }
 
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 30px;
+            padding-top: 20px;
             text-align: center;
-            color: rgba(255,255,255,0.5);
-            font-size: 0.9rem;
+            color: rgba(255,255,255,0.4);
+            font-size: 0.85rem;
         }
 
-        /* Responsive */
+        /* ── Responsive ── */
+        @media (max-width: 900px) {
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
         @media (max-width: 768px) {
-            .header {
-                padding: 60px 0;
-            }
+            .nav-links { display: none; }
 
-            .header h1 {
-                font-size: 2.5rem;
-            }
-
-            .header p {
-                font-size: 1.1rem;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 280px;
-                justify-content: center;
-            }
+            .hero { padding: 60px 0 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .hero p { font-size: 1.05rem; }
 
             .features-grid {
                 grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
             }
 
-            .section-title {
-                font-size: 2rem;
+            .section-title { font-size: 1.8rem; }
+
+            .screenshots-scroll {
+                justify-content: flex-start;
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                padding: 0 24px 20px;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
             }
+
+            .screenshots-scroll::-webkit-scrollbar { display: none; }
+
+            .phone-frame { width: 200px; }
+
+            .footer-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .footer-links { justify-content: center; }
         }
     </style>
 </head>
 <body>
-    <!-- Header Hero Section -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <h1>Silaro</h1>
-                <p>Discover your perfect scent with AI-powered recommendations and weather-based suggestions</p>
-                <div class="cta-buttons">
-                    <a href="#download" class="btn btn-primary">
-                        Download Now
-                    </a>
-                    <a href="perfumo/" class="btn btn-secondary">
-                        Learn More
-                    </a>
-                </div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content container">
+            <a href="#" class="logo">
+                <img src="images/app-icon.png" alt="Silaro">
+                <span>Silaro</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#screenshots">Screenshots</a>
+                <a href="#faq">FAQ</a>
+                <a href="support/">Support</a>
             </div>
         </div>
-    </header>
+    </nav>
 
-    <!-- Features Section -->
-    <section class="features">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <h2 class="section-title">Why Choose Silaro?</h2>
-            <p class="section-subtitle">Everything you need to discover, organize, and enjoy your fragrance collection</p>
+            <img src="images/app-icon.png" alt="Silaro" class="hero-icon">
+            <h1>Silaro</h1>
+            <p>Your personal fragrance companion. Organize your collection, discover what to wear, and learn about perfumery.</p>
+            <div class="store-badges">
+                <a href="#">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
+                </a>
+                <a href="#">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-label">Features</div>
+            <h2 class="section-title">Everything for fragrance lovers</h2>
 
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI-Powered Recommendations</h3>
-                    <p>Get personalized fragrance suggestions based on your collection, preferences, and current weather conditions.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
+                    </div>
+                    <h3>Fragrance Collection</h3>
+                    <p>Organize all your perfumes in one place. Track what you own, rate your favorites, and browse detailed fragrance information.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>24,000+ Fragrances</h3>
-                    <p>Explore our massive database with detailed information about notes, accords, and ratings from the community.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 2L9 9H2l5.5 4.5L5 21l7-5 7 5-2.5-7.5L22 9h-7z"/></svg>
+                    </div>
+                    <h3>Daily Recommendations</h3>
+                    <p>Get personalized suggestions based on today's weather, the occasion, and your collection. A new pick for every moment.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">☁️</div>
-                    <h3>Weather Integration</h3>
-                    <p>Receive daily recommendations perfectly matched to your local weather and seasonal preferences.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
+                    </div>
+                    <h3>Collection Analysis</h3>
+                    <p>Discover your fragrance personality. AI analyzes your collection to reveal your style, top fragrance families, and seasonal profile.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">📱</div>
-                    <h3>Offline-First Design</h3>
-                    <p>Access your entire collection and database even without internet connection. Your data stays private and local.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+                    </div>
+                    <h3>Learn Perfumery</h3>
+                    <p>Master the art of fragrance with guided lessons. From the basics of note pyramids to understanding fragrance families.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🎯</div>
-                    <h3>Smart Collection Management</h3>
-                    <p>Organize your fragrances, create wishlists, and track your favorites with intuitive collection tools.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
+                    </div>
+                    <h3>Custom Lists</h3>
+                    <p>Create themed lists for any purpose: gift ideas, seasonal favorites, wish lists. Share them with friends and family.</p>
                 </div>
 
                 <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>Privacy-Focused</h3>
-                    <p>Your personal data stays on your device. Optional cloud sync available with full user control.</p>
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    </div>
+                    <h3>Private & Offline</h3>
+                    <p>Your data stays on your device. Browse and manage your collection without internet. Cloud sync is optional.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats">
+    <!-- Screenshots -->
+    <section id="screenshots" class="screenshots">
         <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <span class="stat-number">24K+</span>
-                    <span class="stat-label">Fragrances in Database</span>
+            <div class="section-label">The App</div>
+            <h2 class="section-title">See it in action</h2>
+        </div>
+
+        <div class="screenshots-scroll">
+            <div>
+                <div class="phone-frame">
+                    <img src="images/collection.png" alt="My Collection">
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Offline Functionality</span>
+                <div class="phone-label">My Collection</div>
+            </div>
+            <div>
+                <div class="phone-frame">
+                    <img src="images/daily-recommendation.png" alt="Daily Recommendation">
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">AI</span>
-                    <span class="stat-label">Powered Recommendations</span>
+                <div class="phone-label">Daily Picks</div>
+            </div>
+            <div>
+                <div class="phone-frame">
+                    <img src="images/analysis.png" alt="Collection Analysis">
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number">Free</span>
-                    <span class="stat-label">Core Features</span>
+                <div class="phone-label">Collection Health</div>
+            </div>
+            <div>
+                <div class="phone-frame">
+                    <img src="images/perfume-detail.png" alt="Perfume Details">
+                </div>
+                <div class="phone-label">Perfume Details</div>
+            </div>
+            <div>
+                <div class="phone-frame">
+                    <img src="images/learn.png" alt="Learn Perfumery">
+                </div>
+                <div class="phone-label">Learn</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-label">FAQ</div>
+            <h2 class="section-title">Common questions</h2>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is Silaro?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Silaro is a mobile app for fragrance enthusiasts. It helps you organize your perfume collection, get AI-powered recommendations tailored to the weather and occasion, analyze your fragrance preferences, and learn about perfumery through guided lessons.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do daily recommendations work?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Each day, Silaro considers your local weather conditions (temperature, humidity, time of day) and your collection to suggest the best fragrances for different occasions like casual outings, work, dates, or special events.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What does the collection analysis show?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            The analysis gives you a unique fragrance personality profile based on your collection. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste and style.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I share my collection with others?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes. You can share your collection, individual lists, and your analysis profile as beautiful web pages that anyone can view, even without the app. Perfect for sharing gift ideas or showing off your collection.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does the app work offline?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Yes. Your collection, fragrance database, search, and lists all work completely offline. Only AI-powered features (daily recommendations, analysis, wearing advisor) require an internet connection.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What languages are supported?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">
+                            Silaro is available in 18 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, Chinese, and more. The AI recommendations respond in your language automatically.
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Download Section -->
-    <section id="download" class="app-section">
+    <!-- Download CTA -->
+    <section class="download-cta">
         <div class="container">
-            <h2 class="section-title">Download Silaro</h2>
-            <p class="section-subtitle">Available on iOS and Android - Start your fragrance journey today</p>
-
-            <div class="app-links">
-                <a href="#" class="app-link">
+            <h2>Start your fragrance journey</h2>
+            <p>Available on iOS and Android</p>
+            <div class="store-badges">
+                <a href="#">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
                 </a>
-                <a href="#" class="app-link">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play" style="height: 56px;">
+                <a href="#">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
             </div>
         </div>
@@ -477,38 +717,33 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3>Silaro</h3>
-                    <p>AI-powered perfume discovery and collection management for fragrance enthusiasts.</p>
+                <div class="footer-brand">
+                    <img src="images/app-icon.png" alt="Silaro">
+                    <span>Silaro</span>
                 </div>
-
-                <div class="footer-section">
-                    <h3>App</h3>
-                    <a href="perfumo/">Features</a>
-                    <a href="perfumo/#screenshots">Screenshots</a>
-                    <a href="support/">Support & FAQ</a>
-                    <a href="support/#contact">Contact Us</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Legal</h3>
+                <div class="footer-links">
+                    <a href="support/">Support</a>
                     <a href="perfumo-privacy/">Privacy Policy</a>
+                    <a href="terms/">Terms of Use</a>
                     <a href="delete-account.html">Delete Account</a>
-                    <a href="terms/">Terms of Service</a>
-                </div>
-
-                <div class="footer-section">
-                    <h3>Developer</h3>
-                    <a href="about/">About Us</a>
-                    <a href="about/#future-apps">Future Apps</a>
-                    <a href="mailto:fragrancecoach.app@gmail.com">Contact Developer</a>
+                    <a href="mailto:fragrancecoach.app@gmail.com">Contact</a>
                 </div>
             </div>
-
             <div class="footer-bottom">
-                <p>&copy; 2026 Silaro. Made with care for fragrance enthusiasts.</p>
+                &copy; 2025 Silaro. All rights reserved.
             </div>
         </div>
     </footer>
+
+    <script>
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>

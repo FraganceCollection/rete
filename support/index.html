@@ -3,468 +3,491 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Support & FAQ - Silaro</title>
-    <meta name="description" content="Get help with Silaro app: FAQ, troubleshooting, contact support for AI-powered perfume discovery.">
-    <link rel="icon" type="image/png" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✨</text></svg>">
-    <link rel="stylesheet" href="../styles.css">
+    <title>Support - Silaro</title>
+    <meta name="description" content="Get help with Silaro. FAQ, troubleshooting, and contact information.">
+    <link rel="icon" type="image/png" href="../images/app-icon.png">
+    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
     <style>
-        /* Page-specific styles */
-        .faq-section {
-            padding: 80px 0;
+        :root {
+            --accent: #B68A3A;
+            --accent-light: #E7D7B0;
+            --accent-dark: #8B6914;
+            --accent-muted: #F5EDD8;
+            --background: #FCFAF7;
+            --surface: #FFFFFF;
+            --surface-variant: #F5F5F7;
+            --text-primary: #0E0E10;
+            --text-secondary: #3A3A3F;
+            --text-tertiary: #4A4A4A;
+            --border: rgba(14, 14, 16, 0.08);
+            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 16px;
         }
 
-        .faq-categories {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-            margin-bottom: 60px;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        .faq-category {
-            background: var(--surface-variant);
-            border-radius: var(--radius-lg);
-            padding: 30px;
-            border-left: 4px solid var(--accent);
-        }
-
-        .faq-category h3 {
-            font-family: var(--font-heading);
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 20px;
+        body {
+            font-family: var(--font-body);
+            line-height: 1.6;
             color: var(--text-primary);
+            background: var(--background);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Nav */
+        .nav {
+            background: var(--surface);
+            padding: 14px 0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
             display: flex;
             align-items: center;
             gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo img { width: 32px; height: 32px; border-radius: 8px; }
+
+        .logo span {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: var(--accent);
+        }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+        }
+
+        .nav-links a:hover { color: var(--accent); }
+
+        /* Header */
+        .header {
+            padding: 48px 0 40px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .header p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+        }
+
+        /* FAQ */
+        .faq-section {
+            padding: 0 0 60px;
+        }
+
+        .faq-category {
+            margin-bottom: 40px;
+        }
+
+        .faq-category-title {
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .faq-category-title svg {
+            width: 20px;
+            height: 20px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .faq-item {
-            margin-bottom: 25px;
             border-bottom: 1px solid var(--border);
-            padding-bottom: 20px;
-        }
-
-        .faq-item:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
         }
 
         .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 16px 0;
+            font-family: var(--font-body);
+            font-size: 0.95rem;
             font-weight: 600;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
             color: var(--text-primary);
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            text-align: left;
         }
 
-        .faq-question:hover {
-            color: var(--accent);
+        .faq-question:hover { color: var(--accent); }
+
+        .faq-chevron {
+            width: 18px;
+            height: 18px;
+            stroke: var(--text-tertiary);
+            fill: none;
+            stroke-width: 2;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+            margin-left: 16px;
         }
+
+        .faq-item.active .faq-chevron { transform: rotate(180deg); }
 
         .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer-inner {
+            padding: 0 0 16px;
             color: var(--text-secondary);
-            line-height: 1.6;
-            padding-left: 0;
+            font-size: 0.9rem;
+            line-height: 1.7;
         }
 
-        .faq-toggle {
-            font-size: 1.2rem;
-            color: var(--accent);
-            transition: transform 0.3s ease;
-        }
+        .faq-item.active .faq-answer { max-height: 400px; }
 
-        .faq-item.active .faq-toggle {
-            transform: rotate(180deg);
-        }
-
-        /* Contact Section */
+        /* Contact */
         .contact-section {
-            padding: 80px 0;
-            background: var(--surface-variant);
+            padding: 48px 0;
+            background: var(--surface);
+            text-align: center;
         }
 
-        .contact-grid {
+        .contact-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .contact-section p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+
+        .contact-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         .contact-card {
-            background: var(--surface);
-            padding: 40px 30px;
+            background: var(--background);
+            padding: 24px 20px;
             border-radius: var(--radius-lg);
-            text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease;
             border: 1px solid var(--border);
+            text-align: center;
         }
 
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .contact-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
+        .contact-card svg {
+            width: 32px;
+            height: 32px;
+            stroke: var(--accent);
+            fill: none;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            margin-bottom: 12px;
         }
 
         .contact-card h3 {
             font-family: var(--font-heading);
-            font-size: 1.3rem;
+            font-size: 1rem;
             font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--text-primary);
+            margin-bottom: 8px;
         }
 
         .contact-card p {
-            color: var(--text-secondary);
-            margin-bottom: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 16px;
         }
 
-        /* Troubleshooting */
-        .troubleshooting {
-            padding: 80px 0;
-        }
-
-        .troubleshooting-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .trouble-card {
-            background: var(--surface);
-            border: 2px solid var(--accent-light);
-            border-radius: var(--radius-md);
-            padding: 25px 20px;
-            text-align: center;
-            transition: all 0.3s ease;
-        }
-
-        .trouble-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-3px);
-        }
-
-        .trouble-card .icon {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            display: block;
-        }
-
-        .trouble-card h4 {
-            font-family: var(--font-heading);
-            font-size: 1.1rem;
+        .contact-card a.btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: var(--accent);
+            color: white;
+            text-decoration: none;
+            border-radius: var(--radius-sm);
             font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--text-primary);
+            font-size: 0.85rem;
+            transition: background 0.2s;
         }
 
-        .trouble-card p {
-            color: var(--text-secondary);
-            font-size: 0.9rem;
+        .contact-card a.btn:hover { background: var(--accent-dark); }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 24px 0;
+            text-align: center;
         }
 
-        /* Responsive */
+        .footer a {
+            color: rgba(255,255,255,0.6);
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 0.85rem;
+        }
+
+        .footer a:hover { color: var(--accent-light); }
+
+        .footer p {
+            color: rgba(255,255,255,0.4);
+            font-size: 0.8rem;
+            margin-top: 12px;
+        }
+
         @media (max-width: 768px) {
-            .faq-categories {
-                grid-template-columns: 1fr;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
+            .nav-links { display: none; }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
     <nav class="nav">
-        <div class="nav-content container">
-            <a href="../" class="logo">✨ Silaro</a>
+        <div class="nav-content">
+            <a href="../" class="logo">
+                <img src="../images/app-icon.png" alt="Silaro">
+                <span>Silaro</span>
+            </a>
             <div class="nav-links">
                 <a href="../">Home</a>
-                <a href="../perfumo/">Features</a>
-                <a href="#faq">FAQ</a>
-                <a href="#contact">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Header -->
     <header class="header">
-        <div class="header-content container">
-            <h1>Support & FAQ</h1>
-            <p>Get help with Silaro - Your AI-powered fragrance companion</p>
+        <div class="container">
+            <h1>Support</h1>
+            <p>Find answers to common questions about Silaro</p>
         </div>
     </header>
 
-    <!-- FAQ Section -->
-    <section id="faq" class="faq-section">
+    <section class="faq-section">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
+            <!-- Getting Started -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Getting Started
+                </div>
 
-            <div class="faq-categories">
-                <!-- Getting Started -->
-                <div class="faq-category">
-                    <h3>Getting Started</h3>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How do I start using Silaro?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Download the app from App Store or Google Play. You can start using it immediately - no account required! The app includes a database of 24,000+ fragrances that works completely offline.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Do I need to create an account?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            No! Silaro works perfectly without an account. Sign in with Google or Apple is optional and only needed for cloud sync and AI recommendations.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Is the app free?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes! Core features like browsing perfumes, collection management, and search are completely free. Premium features like AI recommendations and weather integration are $4.99/month or $44.99/year.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I start using Silaro?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Download Silaro from the App Store or Google Play. You can start browsing and adding fragrances to your collection immediately. No account is required for basic features.</div>
                     </div>
                 </div>
 
-                <!-- Features -->
-                <div class="faq-category">
-                    <h3>Features</h3>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How do AI recommendations work?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Our AI analyzes your collection, preferences, current weather, and occasion to suggest perfect fragrances. It uses advanced algorithms to understand your taste and recommend new scents you'll love.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Can I use the app offline?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Absolutely! Silaro is designed offline-first. All 24,000+ fragrances, your collection, and search functionality work without internet. Only AI features and weather updates require connection.
-                        </div>
-                    </div>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How accurate is the perfume database?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Our database includes 24,000+ fragrances with detailed information about notes, accords, ratings, and reviews. Data is sourced from reputable fragrance communities and regularly updated.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need to create an account?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">No. The app works fully without an account. Sign in with Google or Apple is optional, and only needed if you want cloud sync or AI-powered features.</div>
                     </div>
                 </div>
 
-                <!-- Technical -->
-                <div class="faq-category">
-                    <h3>Technical</h3>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What devices are supported?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            iOS 13.0+ (iPhone & iPad) and Android 5.0+ (API Level 21+). The app is optimized for both phones and tablets.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What devices are supported?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Silaro runs on iOS (iPhone and iPad) and Android phones and tablets.</div>
                     </div>
+                </div>
+            </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            How much storage does the app use?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Approximately 50MB for the app and database. Additional storage is used for cached images, but this is automatically managed and cleaned up.
-                        </div>
-                    </div>
+            <!-- Features -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+                    Features
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Is my data safe and private?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes! Your data stays on your device by default. Cloud sync is optional and uses encrypted connections. We don't track users or sell personal data.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do daily recommendations work?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Silaro checks your local weather (temperature, humidity, time of day) and suggests the best fragrances from your collection for different occasions like casual outings, work, dates, or events.</div>
                     </div>
                 </div>
 
-                <!-- Premium -->
-                <div class="faq-category">
-                    <h3>Premium</h3>
-
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            What's included in Premium?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            AI-powered recommendations, daily weather-based suggestions, collection analysis, advanced search filters, and ad-free experience.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is the collection analysis?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">AI analyzes your collection to create a personal fragrance profile. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste.</div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Can I cancel my subscription?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes, you can cancel anytime through your App Store or Google Play account settings. You'll continue to have access until the end of your billing period.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I share my collection?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. You can share your collection, lists, and analysis as beautiful web pages that anyone can view without the app. Great for sharing gift ideas or comparing collections with friends.</div>
                     </div>
+                </div>
 
-                    <div class="faq-item">
-                        <div class="faq-question">
-                            Is there a free trial?
-                            <span class="faq-toggle">▼</span>
-                        </div>
-                        <div class="faq-answer">
-                            Yes! Premium features include a 7-day free trial. No commitment required.
-                        </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What AI tools are available?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Silaro includes several AI-powered tools: Collection Analysis (fragrance personality profile), Daily Recommendation (weather-based picks), Wearing Advisor (when and how to wear your fragrances), Recommendation Assistant (personalized fragrance suggestions), and Personal Notes (add your own thoughts to any fragrance).</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Does the app work offline?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. Your collection, search, and lists work fully offline. Only AI-powered features (recommendations, analysis, wearing advisor) need an internet connection.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What languages are supported?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Silaro is available in 18 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. AI recommendations respond in your language automatically.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Privacy & Data -->
+            <div class="faq-category">
+                <div class="faq-category-title">
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    Privacy & Data
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is my data private?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">Yes. Your collection and personal data are stored locally on your device by default. Cloud sync is optional and uses encrypted connections. We don't track users or sell personal data.</div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do I delete my account?
+                        <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+                    </button>
+                    <div class="faq-answer">
+                        <div class="faq-answer-inner">You can delete your account and all cloud data from the app settings, or by visiting our <a href="../delete-account.html" style="color: var(--accent);">account deletion page</a>. Local data on your device can be removed by uninstalling the app.</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Troubleshooting -->
-    <section class="troubleshooting">
-        <div class="container">
-            <h2 class="section-title">Quick Troubleshooting</h2>
-
-            <div class="troubleshooting-grid">
-                <div class="trouble-card">
-                    <span class="icon">📱</span>
-                    <h4>App Won't Open</h4>
-                    <p>Try restarting your device or reinstalling the app from the store</p>
-                </div>
-
-                <div class="trouble-card">
-                    <span class="icon">🔍</span>
-                    <h4>Search Not Working</h4>
-                    <p>Check your spelling or try broader search terms. Database works offline</p>
-                </div>
-
-                <div class="trouble-card">
-                    <span class="icon">🤖</span>
-                    <h4>AI Features Not Working</h4>
-                    <p>Ensure you have internet connection and Premium subscription active</p>
-                </div>
-
-                <div class="trouble-card">
-                    <span class="icon">☁️</span>
-                    <h4>Sync Issues</h4>
-                    <p>Check internet connection and make sure you're signed in</p>
-                </div>
-
-                <div class="trouble-card">
-                    <span class="icon">🖼️</span>
-                    <h4>Images Not Loading</h4>
-                    <p>Images are cached automatically. Check internet connection for new images</p>
-                </div>
-
-                <div class="trouble-card">
-                    <span class="icon">💳</span>
-                    <h4>Subscription Issues</h4>
-                    <p>Check your App Store/Google Play purchase history and subscription status</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
+    <!-- Contact -->
     <section id="contact" class="contact-section">
         <div class="container">
-            <h2 class="section-title">Still Need Help?</h2>
+            <h2>Need more help?</h2>
+            <p>We're here to assist you</p>
 
-            <div class="contact-grid">
+            <div class="contact-cards">
                 <div class="contact-card">
-                    <span class="contact-icon">📧</span>
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     <h3>Email Support</h3>
-                    <p>Get personalized help from our support team. We typically respond within 24 hours.</p>
-                    <a href="mailto:fragrancecoach.app@gmail.com?subject=Silaro Support Request" class="btn btn-primary">
-                        Email Us
-                    </a>
+                    <p>We typically respond within 24 hours</p>
+                    <a href="mailto:fragrancecoach.app@gmail.com?subject=Silaro Support" class="btn">Email Us</a>
                 </div>
 
                 <div class="contact-card">
-                    <span class="contact-icon">🗑️</span>
-                    <h3>Delete Account</h3>
-                    <p>Need to delete your account and data? We make it simple and respect your privacy.</p>
-                    <a href="../delete-account.html" class="btn btn-primary">
-                        Delete Account
-                    </a>
-                </div>
-
-                <div class="contact-card">
-                    <span class="contact-icon">📄</span>
-                    <h3>Privacy Policy</h3>
-                    <p>Learn about how we protect your data and what information we collect.</p>
-                    <a href="../perfumo-privacy/" class="btn btn-primary">
-                        View Policy
-                    </a>
+                    <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                    <h3>Privacy</h3>
+                    <p>Learn about how we handle your data</p>
+                    <a href="../perfumo-privacy/" class="btn">Privacy Policy</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2026 Silaro. Made with care for fragrance enthusiasts.</p>
-            <div style="margin-top: 15px;">
+            <div>
                 <a href="../">Home</a>
-                <a href="../perfumo/">Features</a>
-                <a href="../about/">About</a>
                 <a href="../perfumo-privacy/">Privacy</a>
                 <a href="../terms/">Terms</a>
+                <a href="../delete-account.html">Delete Account</a>
             </div>
+            <p>&copy; 2025 Silaro. All rights reserved.</p>
         </div>
     </footer>
 
     <script>
-        // FAQ Toggle Functionality
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const isActive = faqItem.classList.contains('active');
-
-                // Close all other FAQ items
-                document.querySelectorAll('.faq-item').forEach(item => {
-                    item.classList.remove('active');
-                });
-
-                // Toggle current item
-                if (!isActive) {
-                    faqItem.classList.add('active');
-                }
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const wasActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!wasActive) item.classList.add('active');
             });
         });
     </script>
