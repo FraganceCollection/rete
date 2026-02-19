@@ -51,8 +51,8 @@
             <h3>1.2 Collection Data</h3>
             <p>Information about your fragrance preferences:</p>
             <ul>
-                <li>Perfumes in your collection (IDs and metadata)</li>
-                <li>Custom perfumes you create (name, brand, notes)</li>
+                <li>Perfumes in your collection</li>
+                <li>Custom perfumes you create</li>
                 <li>Wishlists and favorites</li>
                 <li>Personal preferences and settings</li>
             </ul>
@@ -67,16 +67,12 @@
             </ul>
 
             <h3>1.4 Location Data</h3>
-            <p>With your permission, we collect:</p>
-            <ul>
-                <li>Approximate location (latitude/longitude) for weather-based recommendations</li>
-            </ul>
-            <p>Location data is only used to fetch weather information and is not stored permanently.</p>
+            <p>With your permission, we collect your approximate location to provide weather-based fragrance recommendations. Location data is only used for this purpose and is not stored permanently.</p>
 
-            <h3>1.5 Advertising Identifiers</h3>
+            <h3>1.5 Advertising</h3>
             <p>For users who consent to personalized advertising:</p>
             <ul>
-                <li>Advertising ID (IDFA on iOS, GAID on Android)</li>
+                <li>An advertising identifier used by your device</li>
                 <li>Ad interaction data</li>
             </ul>
 
@@ -92,78 +88,40 @@
             </ul>
 
             <h2>3. Third-Party Services</h2>
-            <p>Silaro uses the following third-party services:</p>
-
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Service</th>
-                        <th>Purpose</th>
-                        <th>Data Shared</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Firebase (Google)</strong></td>
-                        <td>Authentication, Cloud Storage, Analytics, Crash Reporting</td>
-                        <td>User ID, Collection IDs, Settings, Usage analytics, Error logs</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Google AdMob</strong></td>
-                        <td>Advertising</td>
-                        <td>Advertising ID, Device info, Ad interactions</td>
-                    </tr>
-                    <tr>
-                        <td><strong>RevenueCat</strong></td>
-                        <td>Subscription Management</td>
-                        <td>App User ID, Purchase history, Subscription status</td>
-                    </tr>
-                    <tr>
-                        <td><strong>OpenAI</strong></td>
-                        <td>AI-Powered Recommendations</td>
-                        <td>Collection data (anonymized), Preference context</td>
-                    </tr>
-                    <tr>
-                        <td><strong>WeatherAPI</strong></td>
-                        <td>Weather Data</td>
-                        <td>Location coordinates</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Sentry</strong></td>
-                        <td>Error Monitoring</td>
-                        <td>Error logs, Stack traces, Device info</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Cloudflare</strong></td>
-                        <td>Backend Infrastructure</td>
-                        <td>API requests</td>
-                    </tr>
-                </tbody>
-            </table>
+            <p>To provide our features, we work with trusted third-party services for the following purposes:</p>
+            <ul>
+                <li><strong>Sign-in & Cloud Sync:</strong> To let you create an account and sync your collection across devices</li>
+                <li><strong>AI Recommendations:</strong> To power personalized fragrance suggestions (your data is sent anonymized)</li>
+                <li><strong>Subscription Management:</strong> To manage your Premium subscription through Apple/Google</li>
+                <li><strong>Weather Data:</strong> To provide weather-appropriate fragrance recommendations</li>
+                <li><strong>Advertising:</strong> To show ads to free users (you can opt out of personalized ads)</li>
+                <li><strong>Analytics & Error Reporting:</strong> To improve the app and fix issues (anonymous data only)</li>
+            </ul>
+            <p>All data shared with these services is limited to what is necessary for each purpose. We do not sell your data to any third party.</p>
 
             <h2>4. Data Storage and Security</h2>
 
             <h3>4.1 Local Storage</h3>
-            <p>By default, your data is stored locally on your device using secure SQLite databases. This data never leaves your device unless you enable cloud sync.</p>
+            <p>By default, your data is stored locally on your device. It never leaves your phone unless you enable cloud sync.</p>
 
             <h3>4.2 Cloud Storage</h3>
             <p>If you enable cloud sync:</p>
             <ul>
-                <li>Data is encrypted in transit using HTTPS/TLS</li>
-                <li>Stored securely on Firebase (Google Cloud) servers</li>
+                <li>Your data is encrypted during transfer</li>
+                <li>Stored securely on Google Cloud servers</li>
                 <li>Protected by industry-standard security measures</li>
             </ul>
 
             <h3>4.3 Data Retention</h3>
             <ul>
-                <li><strong>Account Data:</strong> Retained while your account is active</li>
-                <li><strong>Analytics Data:</strong> Retained for 26 months (Firebase default)</li>
-                <li><strong>Crash Logs:</strong> Retained for 90 days</li>
-                <li><strong>Local Data:</strong> Retained until you delete the app or clear data</li>
+                <li><strong>Account Data:</strong> Kept while your account is active</li>
+                <li><strong>Analytics Data:</strong> Kept for up to 26 months</li>
+                <li><strong>Error Reports:</strong> Kept for 90 days</li>
+                <li><strong>Local Data:</strong> Kept until you delete the app</li>
             </ul>
 
             <h2>5. Advertising</h2>
-            <p>Free users see advertisements through Google AdMob. You have choices:</p>
+            <p>Free users see advertisements. You have choices:</p>
             <ul>
                 <li><strong>Personalized Ads:</strong> Tailored to your interests (requires consent)</li>
                 <li><strong>Non-Personalized Ads:</strong> Generic ads if you decline tracking</li>
