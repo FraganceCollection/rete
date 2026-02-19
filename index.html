@@ -155,7 +155,11 @@
 
         .store-badges img {
             height: 48px;
-            border-radius: 8px;
+        }
+
+        .store-badges img[alt*="Google Play"] {
+            height: 70px;
+            margin: -11px 0;
         }
 
         /* ── Features ── */
@@ -340,6 +344,87 @@
 
         .faq-item.active .faq-answer {
             max-height: 300px;
+        }
+
+        /* ── Languages ── */
+        .languages {
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .languages-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 24px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .lang-pill {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ── Share ── */
+        .share-section {
+            padding: 80px 0;
+            background: var(--surface);
+        }
+
+        .share-content {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .share-text {
+            flex: 1;
+        }
+
+        .share-text h2 {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            letter-spacing: -0.3px;
+        }
+
+        .share-text p {
+            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .share-images {
+            display: flex;
+            gap: 16px;
+            flex-shrink: 0;
+        }
+
+        .share-images .phone-frame {
+            width: 180px;
+        }
+
+        @media (max-width: 768px) {
+            .share-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .share-images .phone-frame {
+                width: 160px;
+            }
         }
 
         /* ── Download CTA ── */
@@ -565,10 +650,10 @@
 
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                        <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="11" y1="8" x2="11" y2="14"/><line x1="8" y1="11" x2="14" y2="11"/></svg>
                     </div>
-                    <h3>Private & Offline</h3>
-                    <p>Your data stays on your device. Browse and manage your collection without internet. Cloud sync is optional.</p>
+                    <h3>Discover New Fragrances</h3>
+                    <p>Explore a vast fragrance database. Search by name, brand, or notes. Find your next signature scent with AI-powered suggestions.</p>
                 </div>
             </div>
         </div>
@@ -598,7 +683,7 @@
                 <div class="phone-frame">
                     <img src="images/analysis.png" alt="Collection Analysis">
                 </div>
-                <div class="phone-label">Collection Health</div>
+                <div class="phone-label">Collection Analysis</div>
             </div>
             <div>
                 <div class="phone-frame">
@@ -611,6 +696,27 @@
                     <img src="images/learn.png" alt="Learn Perfumery">
                 </div>
                 <div class="phone-label">Learn</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share -->
+    <section class="share-section">
+        <div class="container">
+            <div class="share-content">
+                <div class="share-text">
+                    <div class="section-label">Share</div>
+                    <h2>Share with your friends</h2>
+                    <p>Export your collection and analysis as beautiful shareable pages. Show off your fragrances, compare collections, or send gift ideas to friends and family.</p>
+                </div>
+                <div class="share-images">
+                    <div class="phone-frame">
+                        <img src="images/export-collection.png" alt="Shared Collection">
+                    </div>
+                    <div class="phone-frame">
+                        <img src="images/export-analysis.png" alt="Shared Analysis">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -697,6 +803,34 @@
         </div>
     </section>
 
+    <!-- Languages -->
+    <section class="languages">
+        <div class="container">
+            <div class="section-label">Global</div>
+            <h2 class="section-title">Available in 18 languages</h2>
+            <div class="languages-grid">
+                <span class="lang-pill">English</span>
+                <span class="lang-pill">Espanol</span>
+                <span class="lang-pill">Francais</span>
+                <span class="lang-pill">Portugues</span>
+                <span class="lang-pill">Deutsch</span>
+                <span class="lang-pill">Italiano</span>
+                <span class="lang-pill">Nederlands</span>
+                <span class="lang-pill">Polski</span>
+                <span class="lang-pill">Turkce</span>
+                <span class="lang-pill">Русский</span>
+                <span class="lang-pill">العربية</span>
+                <span class="lang-pill">हिन्दी</span>
+                <span class="lang-pill">日本語</span>
+                <span class="lang-pill">한국어</span>
+                <span class="lang-pill">中文</span>
+                <span class="lang-pill">Bahasa Indonesia</span>
+                <span class="lang-pill">Tieng Viet</span>
+                <span class="lang-pill">ภาษาไทย</span>
+            </div>
+        </div>
+    </section>
+
     <!-- Download CTA -->
     <section class="download-cta">
         <div class="container">
@@ -726,7 +860,7 @@
                     <a href="perfumo-privacy/">Privacy Policy</a>
                     <a href="terms/">Terms of Use</a>
                     <a href="delete-account.html">Delete Account</a>
-                    <a href="mailto:fragrancecoach.app@gmail.com">Contact</a>
+                    <a href="mailto:rete.gamedev@gmail.com">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
