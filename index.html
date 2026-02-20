@@ -132,6 +132,17 @@
             margin-bottom: 16px;
         }
 
+        .hero-hook {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 600;
+            font-style: italic;
+            color: var(--text-primary);
+            max-width: 560px;
+            margin: 0 auto 16px;
+            line-height: 1.4;
+        }
+
         .hero p {
             font-size: 1.2rem;
             color: var(--text-secondary);
@@ -162,10 +173,83 @@
             margin: -11px 0;
         }
 
+        /* ── Scenarios ── */
+        .scenarios {
+            padding: 64px 0 72px;
+            background: var(--surface);
+        }
+
+        .scenarios-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .scenario-card {
+            background: var(--background);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px 24px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+
+        .scenario-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .scenario-icon {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 16px;
+            color: var(--accent);
+        }
+
+        .scenario-icon svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        .scenario-card h3 {
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .scenario-result {
+            font-size: 0.95rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        .scenarios-closing {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 580px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        .scenarios-closing strong {
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .scenarios-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto 40px;
+            }
+        }
+
         /* ── Features ── */
         .features {
             padding: 80px 0;
-            background: var(--surface);
         }
 
         .section-label {
@@ -195,7 +279,7 @@
         }
 
         .feature-card {
-            background: var(--background);
+            background: var(--surface);
             padding: 28px 24px;
             border-radius: var(--radius-lg);
             border: 1px solid var(--border);
@@ -247,6 +331,7 @@
         .screenshots {
             padding: 80px 0;
             overflow: hidden;
+            background: var(--surface);
         }
 
         .screenshots-scroll {
@@ -284,7 +369,6 @@
         /* ── FAQ ── */
         .faq {
             padding: 80px 0;
-            background: var(--surface);
         }
 
         .faq-list {
@@ -350,6 +434,7 @@
         .languages {
             padding: 60px 0;
             text-align: center;
+            background: var(--surface);
         }
 
         .languages-grid {
@@ -376,7 +461,6 @@
         /* ── Share ── */
         .share-section {
             padding: 80px 0;
-            background: var(--surface);
         }
 
         .share-header {
@@ -456,7 +540,24 @@
             font-family: var(--font-heading);
             font-size: 2rem;
             font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .cta-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
             margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta-tagline {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            font-weight: 700;
+            opacity: 1;
+            margin-bottom: 8px;
             position: relative;
         }
 
@@ -465,6 +566,9 @@
             opacity: 0.9;
             margin-bottom: 32px;
             position: relative;
+            max-width: 480px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .download-cta .store-badges {
@@ -541,6 +645,7 @@
 
             .hero { padding: 60px 0 40px; }
             .hero h1 { font-size: 2.2rem; }
+            .hero-hook { font-size: 1.25rem; }
             .hero p { font-size: 1.05rem; }
 
             .features-grid {
@@ -596,7 +701,8 @@
         <div class="container">
             <img src="images/app-icon.png" alt="Silaro" class="hero-icon">
             <h1>Silaro</h1>
-            <p>Your personal fragrance companion. Organize your collection, discover what to wear, and learn about perfumery.</p>
+            <p class="hero-hook">You wouldn't wear a suit to the beach.<br>So why wear the same fragrance everywhere?</p>
+            <p>Your scent is the first thing people remember about you. Make every choice count.</p>
             <div class="store-badges">
                 <a href="#">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
@@ -605,6 +711,36 @@
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
             </div>
+        </div>
+    </section>
+
+    <!-- Scenarios -->
+    <section class="scenarios">
+        <div class="container">
+            <div class="scenarios-grid">
+                <div class="scenario-card">
+                    <div class="scenario-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a4 4 0 0 0-8 0v2"/></svg>
+                    </div>
+                    <h3>Leading your first big presentation</h3>
+                    <p class="scenario-result">A scent that commands without trying</p>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+                    </div>
+                    <h3>Meeting her parents for the first time</h3>
+                    <p class="scenario-result">A fragrance that feels warm & trustworthy</p>
+                </div>
+                <div class="scenario-card">
+                    <div class="scenario-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    </div>
+                    <h3>Saturday brunch with friends</h3>
+                    <p class="scenario-result">Something fresh, effortless, you</p>
+                </div>
+            </div>
+            <p class="scenarios-closing">Most people reach for the same bottle every day and hope for the best.<br><strong>Silaro helps you find the right fragrance for every moment.</strong></p>
         </div>
     </section>
 
@@ -843,7 +979,9 @@
     <section class="download-cta">
         <div class="container">
             <h2>Start your fragrance journey</h2>
-            <p>Available on iOS and Android</p>
+            <img src="images/app-icon.png" alt="Silaro" class="cta-icon">
+            <p class="cta-tagline">Silaro</p>
+            <p>Your personal fragrance companion. Organize your collection, discover what to wear, and learn about perfumery.</p>
             <div class="store-badges">
                 <a href="#">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
