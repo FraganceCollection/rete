@@ -327,43 +327,37 @@
             line-height: 1.6;
         }
 
-        /* ── Screenshots ── */
+        /* ── Screenshots / Video ── */
         .screenshots {
             padding: 80px 0;
-            overflow: hidden;
             background: var(--surface);
         }
 
-        .screenshots-scroll {
+        .video-showcase {
             display: flex;
-            gap: 32px;
             justify-content: center;
-            flex-wrap: wrap;
-            margin-top: 12px;
+            margin-top: 24px;
         }
 
-        .phone-frame {
-            width: 220px;
-            flex-shrink: 0;
-            background: #1a1a1a;
-            border-radius: 36px;
-            padding: 12px 8px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.15), 0 0 0 1px rgba(255,255,255,0.1) inset;
+        .video-showcase video {
+            box-shadow: 0 24px 80px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.06);
         }
 
-        .phone-frame img {
-            width: 100%;
-            border-radius: 24px;
-            display: block;
+        /* Desktop: landscape video */
+        .video-showcase .video-landscape {
+            width: min(800px, 85vw);
+            border-radius: 16px;
         }
+        .video-showcase .video-portrait { display: none; }
 
-        .phone-label {
-            text-align: center;
-            margin-top: 16px;
-            font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: 0.9rem;
-            color: var(--text-primary);
+        /* Mobile: portrait video with scroll-expand */
+        @media (max-width: 768px) {
+            .video-showcase .video-landscape { display: none; }
+            .video-showcase .video-portrait {
+                display: block;
+                width: 260px;
+                border-radius: 20px;
+            }
         }
 
         /* ── FAQ ── */
@@ -656,18 +650,7 @@
 
             .section-title { font-size: 1.8rem; }
 
-            .screenshots-scroll {
-                justify-content: flex-start;
-                flex-wrap: nowrap;
-                overflow-x: auto;
-                padding: 0 24px 20px;
-                -webkit-overflow-scrolling: touch;
-                scrollbar-width: none;
-            }
-
-            .screenshots-scroll::-webkit-scrollbar { display: none; }
-
-            .phone-frame { width: 200px; }
+            .screenshots { padding: 48px 0; }
 
             .footer-content {
                 flex-direction: column;
@@ -809,37 +792,13 @@
             <h2 class="section-title">See it in action</h2>
         </div>
 
-        <div class="screenshots-scroll">
-            <div>
-                <div class="phone-frame">
-                    <img src="images/collection.png" alt="My Collection">
-                </div>
-                <div class="phone-label">My Collection</div>
-            </div>
-            <div>
-                <div class="phone-frame">
-                    <img src="images/daily-recommendation.png" alt="Daily Recommendation">
-                </div>
-                <div class="phone-label">Daily Picks</div>
-            </div>
-            <div>
-                <div class="phone-frame">
-                    <img src="images/analysis.png" alt="Collection Analysis">
-                </div>
-                <div class="phone-label">Collection Analysis</div>
-            </div>
-            <div>
-                <div class="phone-frame">
-                    <img src="images/perfume-detail.png" alt="Perfume Details">
-                </div>
-                <div class="phone-label">Perfume Details</div>
-            </div>
-            <div>
-                <div class="phone-frame">
-                    <img src="images/learn.png" alt="Learn Perfumery">
-                </div>
-                <div class="phone-label">Learn</div>
-            </div>
+        <div class="video-showcase">
+            <video class="video-landscape" autoplay muted loop playsinline poster="videos/preview-landscape-poster.jpg">
+                <source src="videos/preview-landscape.mp4" type="video/mp4">
+            </video>
+            <video class="video-portrait" autoplay muted loop playsinline poster="videos/preview-poster.jpg">
+                <source src="videos/preview.mp4" type="video/mp4">
+            </video>
         </div>
     </section>
 
@@ -1016,6 +975,7 @@
     </footer>
 
     <script>
+        // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(btn => {
             btn.addEventListener('click', () => {
                 const item = btn.parentElement;
@@ -1024,6 +984,35 @@
                 if (!wasActive) item.classList.add('active');
             });
         });
+
+        // Mobile: scroll-expand video
+        (function() {
+            if (window.innerWidth > 768) return;
+            const video = document.querySelector('.video-portrait');
+            const section = document.querySelector('.screenshots');
+            if (!video || !section) return;
+
+            function easeOut(t) { return 1 - Math.pow(1 - t, 3); }
+
+            function update() {
+                const rect = section.getBoundingClientRect();
+                const vh = window.innerHeight;
+                // Start expanding when section top is at 70% of viewport, complete when at 30%
+                const raw = (vh * 0.7 - rect.top) / (vh * 0.4);
+                const t = easeOut(Math.max(0, Math.min(1, raw)));
+
+                const startW = 260;
+                const endW = window.innerWidth;
+                video.style.width = (startW + (endW - startW) * t) + 'px';
+                video.style.borderRadius = (20 * (1 - t)) + 'px';
+                video.style.boxShadow = t > 0.95
+                    ? 'none'
+                    : '0 24px 80px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.06)';
+            }
+
+            window.addEventListener('scroll', update, { passive: true });
+            update();
+        })();
     </script>
 </body>
 </html>
