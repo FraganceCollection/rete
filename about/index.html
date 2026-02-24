@@ -190,10 +190,22 @@
 
             <div class="contact-box">
                 <h2>Contact</h2>
-                <p><a href="mailto:rete.gamedev@gmail.com">rete.gamedev@gmail.com</a></p>
+                <p><a href="#" class="js-email" data-subj="" data-show-addr="1"></a></p>
             </div>
         </div>
     </main>
+
+    <script>
+    (function(){var u='rete.gamedev',d='gmail.com';
+    document.querySelectorAll('.js-email').forEach(function(a){
+        var s=a.getAttribute('data-subj'),b=a.getAttribute('data-body')||'';
+        var h='mai'+'lto:'+u+'@'+d;
+        if(s)h+='?subject='+encodeURIComponent(s);
+        if(b)h+=(s?'&':'?')+'body='+encodeURIComponent(b);
+        a.href=h;
+        if(a.hasAttribute('data-show-addr'))a.textContent=u+'@'+d;
+    });})();
+    </script>
 
     <footer class="footer">
         <div class="container">

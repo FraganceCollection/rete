@@ -965,7 +965,7 @@
                     <a href="perfumo-privacy/">Privacy Policy</a>
                     <a href="terms/">Terms of Use</a>
                     <a href="delete-account.html">Delete Account</a>
-                    <a href="mailto:rete.gamedev@gmail.com">Contact</a>
+                    <a href="#" class="js-email" data-subj="">Contact</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -975,6 +975,17 @@
     </footer>
 
     <script>
+        // Email obfuscation — assembled at runtime so bots can't scrape it
+        (function(){var u='rete.gamedev',d='gmail.com';
+        document.querySelectorAll('.js-email').forEach(function(a){
+            var s=a.getAttribute('data-subj'),b=a.getAttribute('data-body')||'';
+            var h='mai'+'lto:'+u+'@'+d;
+            if(s)h+='?subject='+encodeURIComponent(s);
+            if(b)h+=(s?'&':'?')+'body='+encodeURIComponent(b);
+            a.href=h;
+            if(a.textContent===a.getAttribute('data-show-addr'))a.textContent=u+'@'+d;
+        });})();
+
         // FAQ accordion
         document.querySelectorAll('.faq-question').forEach(btn => {
             btn.addEventListener('click', () => {

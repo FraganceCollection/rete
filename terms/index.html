@@ -209,12 +209,24 @@
             <h2>17. Contact Information</h2>
             <p>For questions about these Terms, contact us at:</p>
             <div class="highlight-box">
-                <p><strong>Email:</strong> <a href="mailto:rete.gamedev@gmail.com">rete.gamedev@gmail.com</a></p>
+                <p><strong>Email:</strong> <a href="#" class="js-email" data-subj="" data-show-addr="1"></a></p>
                 <p><strong>Support:</strong> <a href="../support/">Support & FAQ</a></p>
             </div>
 
         </div>
     </main>
+
+    <script>
+    (function(){var u='rete.gamedev',d='gmail.com';
+    document.querySelectorAll('.js-email').forEach(function(a){
+        var s=a.getAttribute('data-subj'),b=a.getAttribute('data-body')||'';
+        var h='mai'+'lto:'+u+'@'+d;
+        if(s)h+='?subject='+encodeURIComponent(s);
+        if(b)h+=(s?'&':'?')+'body='+encodeURIComponent(b);
+        a.href=h;
+        if(a.hasAttribute('data-show-addr'))a.textContent=u+'@'+d;
+    });})();
+    </script>
 
     <!-- Footer -->
     <footer class="footer">

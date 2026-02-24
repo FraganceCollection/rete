@@ -158,7 +158,10 @@
                     <li>Include the email address you used to sign in (Google or Apple)</li>
                     <li>We'll confirm the deletion within 48 hours</li>
                 </ol>
-                <a href="mailto:rete.gamedev@gmail.com?subject=Account Deletion Request - Silaro&body=Please delete my Silaro account and associated data.%0A%0AMy sign-in email: [Enter your email here]%0ASign-in method: [Google / Apple]" class="delete-btn">
+                <a href="#" class="delete-btn js-email" data-subj="Account Deletion Request - Silaro" data-body="Please delete my Silaro account and associated data.
+
+My sign-in email: [Enter your email here]
+Sign-in method: [Google / Apple]">
                     Request Account Deletion
                 </a>
             </div>
@@ -209,7 +212,7 @@
             <div class="deletion-card">
                 <h2>Need Help?</h2>
                 <p>If you have questions about account deletion or data privacy:</p>
-                <a href="mailto:rete.gamedev@gmail.com?subject=Account Deletion Question - Silaro" class="contact-btn">
+                <a href="#" class="contact-btn js-email" data-subj="Account Deletion Question - Silaro">
                     Contact Support
                 </a>
             </div>
@@ -219,6 +222,18 @@
             </div>
         </div>
     </main>
+
+    <script>
+    (function(){var u='rete.gamedev',d='gmail.com';
+    document.querySelectorAll('.js-email').forEach(function(a){
+        var s=a.getAttribute('data-subj'),b=a.getAttribute('data-body')||'';
+        var h='mai'+'lto:'+u+'@'+d;
+        if(s)h+='?subject='+encodeURIComponent(s);
+        if(b)h+=(s?'&':'?')+'body='+encodeURIComponent(b);
+        a.href=h;
+        if(a.hasAttribute('data-show-addr'))a.textContent=u+'@'+d;
+    });})();
+    </script>
 
     <!-- Footer -->
     <footer class="footer">
