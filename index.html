@@ -1026,11 +1026,25 @@
 
     <script>
         // ── Analytics: Store button click tracking ──
+        // Prevents navigation until GA4 event is sent (outbound links cancel requests)
         document.querySelectorAll('[data-store]').forEach(function(link) {
-            link.addEventListener('click', function() {
-                var store = this.getAttribute('data-store');    // 'apple' or 'google'
-                var location = this.getAttribute('data-location'); // 'hero' or 'cta'
-                if (typeof gtag === 'function') {
+            link.addEventListener('click', function(e) {
+                var store = this.getAttribute('data-store');
+                var location = this.getAttribute('data-location');
+                var url = this.href;
+
+                if (typeof gtag === 'function' && url && url !== '#') {
+                    e.preventDefault();
+                    gtag('event', 'store_click', {
+                        store_type: store,
+                        click_location: location,
+                        event_callback: function() {
+                            window.location.href = url;
+                        }
+                    });
+                    // Safety: navigate anyway after 1s if GA4 is slow
+                    setTimeout(function() { window.location.href = url; }, 1000);
+                } else if (typeof gtag === 'function') {
                     gtag('event', 'store_click', {
                         store_type: store,
                         click_location: location
