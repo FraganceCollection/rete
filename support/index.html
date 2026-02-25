@@ -5,6 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Support - Silaro</title>
     <meta name="description" content="Get help with Silaro. FAQ, troubleshooting, and contact information.">
+    <link rel="canonical" href="https://silaro.app/support/">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silaro.app/support/">
+    <meta property="og:title" content="Support & FAQ - Silaro">
+    <meta property="og:description" content="Get help with Silaro. FAQ, troubleshooting, and contact information.">
+    <meta property="og:image" content="https://silaro.app/images/app-icon.png">
+    <meta property="og:site_name" content="Silaro">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Support & FAQ - Silaro">
+    <meta name="twitter:description" content="Get help with Silaro. FAQ, troubleshooting, and contact information.">
+    <meta name="twitter:image" content="https://silaro.app/images/app-icon.png">
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6KQWNR8C5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-J6KQWNR8C5');
+    </script>
+
     <link rel="icon" type="image/png" href="../images/app-icon.png">
     <link rel="apple-touch-icon" href="../images/app-icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -286,6 +311,104 @@
             .nav-links { display: none; }
         }
     </style>
+
+    <!-- Structured Data: FAQPage -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I start using Silaro?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Download Silaro from the App Store or Google Play. You can start browsing and adding fragrances to your collection immediately. No account is required for basic features."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Do I need to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. The app works fully without an account. Sign in with Google or Apple is optional, and only needed if you want cloud sync or AI-powered features."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What devices are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silaro runs on iOS (iPhone and iPad) and Android phones and tablets."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do daily recommendations work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silaro checks your local weather (temperature, humidity, time of day) and suggests the best fragrances from your collection for different occasions like casual outings, work, dates, or events."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What is the collection analysis?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "AI analyzes your collection to create a personal fragrance profile. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I share my collection?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can share your collection, lists, and analysis as beautiful web pages that anyone can view without the app. Great for sharing gift ideas or comparing collections with friends."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What AI tools are available?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silaro includes several AI-powered tools: Collection Analysis (fragrance personality profile), Daily Recommendation (weather-based picks), Wearing Advisor (when and how to wear your fragrances), Recommendation Assistant (personalized fragrance suggestions), and Personal Notes (add your own thoughts to any fragrance)."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the app work offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Your collection, search, and lists work fully offline. Only AI-powered features (recommendations, analysis, wearing advisor) need an internet connection."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What languages are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. AI recommendations respond in your language automatically."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is my data private?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Your collection and personal data are stored locally on your device by default. Cloud sync is optional and uses encrypted connections. We don't track users or sell personal data."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I delete my account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "You can delete your account and all cloud data from the app settings, or by visiting the account deletion page at https://silaro.app/delete-account.html. Local data on your device can be removed by uninstalling the app."
+                }
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
     <nav class="nav">
@@ -410,7 +533,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Silaro is available in 18 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. AI recommendations respond in your language automatically.</div>
+                        <div class="faq-answer-inner">Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. AI recommendations respond in your language automatically.</div>
                     </div>
                 </div>
             </div>
@@ -477,7 +600,7 @@
                 <a href="../terms/">Terms</a>
                 <a href="../delete-account.html">Delete Account</a>
             </div>
-            <p>&copy; 2025 Silaro. All rights reserved.</p>
+            <p>&copy; 2026 Silaro. All rights reserved.</p>
         </div>
     </footer>
 
