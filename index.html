@@ -57,8 +57,65 @@
     }
     </script>
 
+    <!-- FAQ Structured Data (enables rich snippets in Google) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "What is Silaro?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silaro is a mobile app for fragrance enthusiasts. It helps you organize your perfume collection, get AI-powered recommendations tailored to the weather and occasion, analyze your fragrance preferences, and learn about perfumery through guided lessons."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do daily recommendations work?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Each day, Silaro considers your local weather conditions (temperature, humidity, time of day) and your collection to suggest the best fragrances for different occasions like casual outings, work, dates, or special events."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What does the collection analysis show?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The analysis gives you a unique fragrance personality profile based on your collection. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste and style."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I share my collection with others?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. You can share your collection, individual lists, and your analysis profile as beautiful web pages that anyone can view, even without the app. Perfect for sharing gift ideas or showing off your collection."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does the app work offline?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Your collection, fragrance database, search, and lists all work completely offline. Only AI-powered features (daily recommendations, analysis, wearing advisor) require an internet connection."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What languages are supported?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, Chinese, and more. The AI recommendations respond in your language automatically."
+                }
+            }
+        ]
+    }
+    </script>
+
     <!-- Google Analytics 4 -->
-    <!-- Replace G-J6KQWNR8C5 with your actual GA4 Measurement ID -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6KQWNR8C5"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -94,6 +151,7 @@
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
+        .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
 
         body {
             font-family: var(--font-body);
@@ -716,8 +774,8 @@
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-content container">
-            <a href="#" class="logo">
-                <img src="images/app-icon.png" alt="Silaro">
+            <a href="./" class="logo">
+                <img src="images/app-icon.png" alt="Silaro app icon" width="36" height="36">
                 <span>Silaro</span>
             </a>
             <div class="nav-links">
@@ -732,16 +790,16 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <img src="images/app-icon.png" alt="Silaro" class="hero-icon">
+            <img src="images/app-icon.png" alt="Silaro fragrance companion app" class="hero-icon" width="72" height="72">
             <h1>Silaro</h1>
             <p class="hero-hook">You wouldn't wear a suit to the beach.<br>So why wear the same fragrance everywhere?</p>
             <p>Your scent is the first thing people remember about you. Make every choice count.</p>
             <div class="store-badges">
                 <a href="https://apps.apple.com/us/app/silaro/id6751210763" data-store="apple" data-location="hero">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Silaro on the App Store" height="48">
                 </a>
                 <a href="#" data-store="google" data-location="hero">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Silaro on Google Play" height="70">
                 </a>
             </div>
         </div>
@@ -750,6 +808,7 @@
     <!-- Scenarios -->
     <section class="scenarios">
         <div class="container">
+            <h2 class="sr-only">The right fragrance for every moment</h2>
             <div class="scenarios-grid">
                 <div class="scenario-card">
                     <div class="scenario-icon">
@@ -843,10 +902,10 @@
         </div>
 
         <div class="video-showcase">
-            <video class="video-landscape" autoplay muted loop playsinline poster="videos/preview-landscape-poster.jpg">
+            <video class="video-landscape" autoplay muted loop playsinline preload="metadata" poster="videos/preview-landscape-poster.jpg">
                 <source src="videos/preview-landscape.mp4" type="video/mp4">
             </video>
-            <video class="video-portrait" autoplay muted loop playsinline poster="videos/preview-poster.jpg">
+            <video class="video-portrait" autoplay muted loop playsinline preload="metadata" poster="videos/preview-poster.jpg">
                 <source src="videos/preview.mp4" type="video/mp4">
             </video>
         </div>
@@ -862,11 +921,11 @@
             </div>
             <div class="share-images">
                 <div class="share-card">
-                    <img src="images/export-collection.png" alt="Shared Collection">
+                    <img src="images/export-collection.png" alt="Silaro collection export showing perfume list with ratings and notes" loading="lazy">
                     <div class="share-card-label">Collection Export</div>
                 </div>
                 <div class="share-card">
-                    <img src="images/export-analysis.png" alt="Shared Analysis">
+                    <img src="images/export-analysis.png" alt="Silaro analysis export showing fragrance personality profile and statistics" loading="lazy">
                     <div class="share-card-label">Analysis Export</div>
                 </div>
             </div>
@@ -988,15 +1047,15 @@
     <section class="download-cta">
         <div class="container">
             <h2>Start your fragrance journey</h2>
-            <img src="images/app-icon.png" alt="Silaro" class="cta-icon">
+            <img src="images/app-icon.png" alt="Silaro app icon" class="cta-icon" width="56" height="56">
             <p class="cta-tagline">Silaro</p>
             <p>Your personal fragrance companion. Organize your collection, discover what to wear, and learn about perfumery.</p>
             <div class="store-badges">
                 <a href="https://apps.apple.com/us/app/silaro/id6751210763" data-store="apple" data-location="cta">
-                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
+                    <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download Silaro on the App Store" height="48">
                 </a>
                 <a href="#" data-store="google" data-location="cta">
-                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
+                    <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get Silaro on Google Play" height="70">
                 </a>
             </div>
         </div>
@@ -1007,7 +1066,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/app-icon.png" alt="Silaro">
+                    <img src="images/app-icon.png" alt="Silaro" width="32" height="32">
                     <span>Silaro</span>
                 </div>
                 <div class="footer-links">
