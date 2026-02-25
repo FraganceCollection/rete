@@ -3,19 +3,69 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Silaro - Your Fragrance Companion</title>
-    <meta name="description" content="Organize your fragrance collection, get AI-powered daily recommendations, analyze your taste profile, and learn about perfumery.">
-    <meta name="keywords" content="perfume app, fragrance collection, scent discovery, AI recommendations, perfume tracker">
+    <title>Silaro - Your Fragrance Companion | AI Perfume Recommendations</title>
+    <meta name="description" content="Organize your fragrance collection, get AI-powered daily recommendations based on weather and occasion, analyze your taste profile, and learn about perfumery. Available for iOS and Android.">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://silaro.app/">
 
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://silaro.app/">
     <meta property="og:title" content="Silaro - Your Fragrance Companion">
-    <meta property="og:description" content="Organize your fragrance collection, get AI-powered daily recommendations, and learn about perfumery.">
-    <meta property="og:image" content="images/app-icon.png">
+    <meta property="og:description" content="Organize your fragrance collection, get AI-powered daily recommendations based on weather and occasion, and learn about perfumery.">
+    <meta property="og:image" content="https://silaro.app/images/app-icon.png">
+    <meta property="og:site_name" content="Silaro">
+    <meta property="og:locale" content="en_US">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Silaro - Your Fragrance Companion">
+    <meta name="twitter:description" content="AI-powered fragrance recommendations, collection management, and perfumery lessons. Available for iOS and Android.">
+    <meta name="twitter:image" content="https://silaro.app/images/app-icon.png">
+
+    <!-- App Links -->
+    <meta property="al:ios:app_store_id" content="6751210763">
+    <meta property="al:ios:app_name" content="Silaro">
+    <meta name="apple-itunes-app" content="app-id=6751210763">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/app-icon.png">
     <link rel="apple-touch-icon" href="images/app-icon.png">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Silaro",
+        "description": "Organize your fragrance collection, get AI-powered daily recommendations based on weather and occasion, analyze your taste profile, and learn about perfumery.",
+        "url": "https://silaro.app",
+        "applicationCategory": "LifestyleApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "Silaro"
+        },
+        "image": "https://silaro.app/images/app-icon.png",
+        "inLanguage": ["en", "es", "fr", "pt", "de", "it", "nl", "pl", "tr", "ru", "ar", "hi", "ja", "ko", "zh", "da", "fi", "nb", "sv"]
+    }
+    </script>
+
+    <!-- Google Analytics 4 -->
+    <!-- Replace G-J6KQWNR8C5 with your actual GA4 Measurement ID -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6KQWNR8C5"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-J6KQWNR8C5');
+    </script>
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -687,10 +737,10 @@
             <p class="hero-hook">You wouldn't wear a suit to the beach.<br>So why wear the same fragrance everywhere?</p>
             <p>Your scent is the first thing people remember about you. Make every choice count.</p>
             <div class="store-badges">
-                <a href="https://apps.apple.com/us/app/silaro/id6751210763">
+                <a href="https://apps.apple.com/us/app/silaro/id6751210763" data-store="apple" data-location="hero">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
                 </a>
-                <a href="#">
+                <a href="#" data-store="google" data-location="hero">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
             </div>
@@ -942,10 +992,10 @@
             <p class="cta-tagline">Silaro</p>
             <p>Your personal fragrance companion. Organize your collection, discover what to wear, and learn about perfumery.</p>
             <div class="store-badges">
-                <a href="https://apps.apple.com/us/app/silaro/id6751210763">
+                <a href="https://apps.apple.com/us/app/silaro/id6751210763" data-store="apple" data-location="cta">
                     <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on App Store">
                 </a>
-                <a href="#">
+                <a href="#" data-store="google" data-location="cta">
                     <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png" alt="Get it on Google Play">
                 </a>
             </div>
@@ -969,12 +1019,26 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                &copy; 2025 Silaro. All rights reserved.
+                &copy; 2026 Silaro. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
+        // ── Analytics: Store button click tracking ──
+        document.querySelectorAll('[data-store]').forEach(function(link) {
+            link.addEventListener('click', function() {
+                var store = this.getAttribute('data-store');    // 'apple' or 'google'
+                var location = this.getAttribute('data-location'); // 'hero' or 'cta'
+                if (typeof gtag === 'function') {
+                    gtag('event', 'store_click', {
+                        store_type: store,
+                        click_location: location
+                    });
+                }
+            });
+        });
+
         // Email obfuscation — assembled at runtime so bots can't scrape it
         (function(){var u='rete.gamedev',d='gmail.com';
         document.querySelectorAll('.js-email').forEach(function(a){
