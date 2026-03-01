@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px;
+    height: 630px;
+    overflow: hidden;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background: linear-gradient(135deg, #FCFAF7 0%, #F5EDD8 50%, #EED9A0 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+  }
+  .left-bar {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 6px;
+    background: #B68A3A;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 56px 64px 56px 80px;
+    gap: 64px;
+  }
+  .text-side {
+    flex: 1;
+  }
+  .brand-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .brand-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 16px;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .brand-name {
+    font-size: 2.4rem;
+    font-weight: 800;
+    color: #B68A3A;
+    letter-spacing: -1px;
+  }
+  h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #0E0E10;
+    line-height: 1.15;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  .subtitle {
+    font-size: 1.15rem;
+    color: #3A3A3F;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .pill {
+    background: rgba(182,138,58,0.12);
+    border: 1.5px solid rgba(182,138,58,0.4);
+    color: #8B6914;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+  .badge {
+    display: inline-block;
+    background: #0E0E10;
+    color: white;
+    padding: 10px 24px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .badge span {
+    opacity: 0.65;
+    font-weight: 400;
+  }
+  .image-side {
+    flex-shrink: 0;
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .screenshot {
+    width: 240px;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.20);
+    object-fit: cover;
+    height: 200px;
+  }
+  .screenshot2 {
+    width: 240px;
+    border-radius: 16px;
+    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
+    object-fit: cover;
+    height: 180px;
+  }
+  .domain {
+    position: absolute;
+    bottom: 24px;
+    right: 32px;
+    font-size: 0.85rem;
+    color: #999;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+  <div class="left-bar"></div>
+  <div class="content">
+    <div class="text-side">
+      <div class="brand-row">
+        <img class="brand-icon" src="images/app-icon.png" alt="Silaro">
+        <div class="brand-name">Silaro</div>
+      </div>
+      <h1>Your Fragrance<br>Companion</h1>
+      <p class="subtitle">Track your perfume collection, get AI-powered<br>daily recommendations, and discover new scents.</p>
+      <div class="pills">
+        <span class="pill">77,000+ perfumes</span>
+        <span class="pill">AI recommendations</span>
+        <span class="pill">19 languages</span>
+        <span class="pill">Free</span>
+      </div>
+      <div class="badge">Free on iOS &amp; Android <span>→ silaro.app</span></div>
+    </div>
+    <div class="image-side">
+      <img class="screenshot" src="images/collection.png" alt="">
+      <img class="screenshot2" src="images/daily-recommendation.png" alt="">
+    </div>
+  </div>
+  <div class="domain">silaro.app</div>
+</body>
+</html>

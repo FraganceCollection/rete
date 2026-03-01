@@ -57,4 +57,22 @@
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
     </url>
+    <url>
+        <loc>https://silaro.app/es/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://silaro.app/pt/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://silaro.app/blog/how-to-build-a-fragrance-collection/</loc>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.7</priority>
+    </url>
 </urlset>
