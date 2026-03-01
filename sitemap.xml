@@ -1,38 +1,59 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
     <url>
         <loc>https://silaro.app/</loc>
-        <lastmod>2026-02-25</lastmod>
-        <changefreq>monthly</changefreq>
+        <lastmod>2026-02-28</lastmod>
+        <changefreq>weekly</changefreq>
         <priority>1.0</priority>
+        <image:image>
+            <image:loc>https://silaro.app/images/collection.png</image:loc>
+            <image:title>Silaro – perfume collection tracker app</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://silaro.app/images/daily-recommendation.png</image:loc>
+            <image:title>Silaro – AI daily fragrance recommendations</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://silaro.app/images/analysis.png</image:loc>
+            <image:title>Silaro – fragrance personality analysis</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://silaro.app/images/perfume-detail.png</image:loc>
+            <image:title>Silaro – perfume detail and fragrance notes</image:title>
+        </image:image>
+        <image:image>
+            <image:loc>https://silaro.app/images/learn.png</image:loc>
+            <image:title>Silaro – learn perfumery lessons</image:title>
+        </image:image>
     </url>
     <url>
         <loc>https://silaro.app/support/</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://silaro.app/about/</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://silaro.app/terms/</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://silaro.app/perfumo-privacy/</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://silaro.app/delete-account.html</loc>
-        <lastmod>2026-02-25</lastmod>
+        <lastmod>2026-02-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.2</priority>
     </url>
