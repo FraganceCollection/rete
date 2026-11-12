@@ -12,14 +12,14 @@
     <meta property="og:url" content="https://silaro.app/support/">
     <meta property="og:title" content="Support & FAQ - Silaro">
     <meta property="og:description" content="Get help with Silaro. FAQ, troubleshooting, and contact information.">
-    <meta property="og:image" content="https://silaro.app/images/app-icon.png">
+    <meta property="og:image" content="https://silaro.app/images/og-image.jpg">
     <meta property="og:site_name" content="Silaro">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Support & FAQ - Silaro">
     <meta name="twitter:description" content="Get help with Silaro. FAQ, troubleshooting, and contact information.">
-    <meta name="twitter:image" content="https://silaro.app/images/app-icon.png">
+    <meta name="twitter:image" content="https://silaro.app/images/og-image.jpg">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6KQWNR8C5"></script>
@@ -30,31 +30,16 @@
         gtag('config', 'G-J6KQWNR8C5');
     </script>
 
-    <link rel="icon" type="image/png" href="../images/app-icon.png">
-    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="32x32">
+    <link rel="icon" href="../images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../tokens.css">
     <style>
-        :root {
-            --accent: #B68A3A;
-            --accent-light: #E7D7B0;
-            --accent-dark: #8B6914;
-            --accent-muted: #F5EDD8;
-            --background: #FCFAF7;
-            --surface: #FFFFFF;
-            --surface-variant: #F5F5F7;
-            --text-primary: #0E0E10;
-            --text-secondary: #3A3A3F;
-            --text-tertiary: #4A4A4A;
-            --border: rgba(14, 14, 16, 0.08);
-            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -95,14 +80,7 @@
             text-decoration: none;
         }
 
-        .logo img { width: 32px; height: 32px; border-radius: 8px; }
-
-        .logo span {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
+        .logo img { display: block; height: 44px; width: auto; }
 
         .nav-links a {
             color: var(--text-secondary);
@@ -331,7 +309,7 @@
                 "name": "Do I need to create an account?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "No. The app works fully without an account. Sign in with Google or Apple is optional, and only needed if you want cloud sync or AI-powered features."
+                    "text": "No. The app works fully without an account. Sign in with Google or Apple is optional, and only needed if you want cloud sync or personalized recommendations."
                 }
             },
             {
@@ -355,7 +333,7 @@
                 "name": "What is the collection analysis?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "AI analyzes your collection to create a personal fragrance profile. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste."
+                    "text": "Silaro analyzes your collection to create a personal fragrance profile. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste."
                 }
             },
             {
@@ -368,10 +346,10 @@
             },
             {
                 "@type": "Question",
-                "name": "What AI tools are available?",
+                "name": "What advisor tools are available?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Silaro includes several AI-powered tools: Collection Analysis (fragrance personality profile), Daily Recommendation (weather-based picks), Wearing Advisor (when and how to wear your fragrances), Recommendation Assistant (personalized fragrance suggestions), and Personal Notes (add your own thoughts to any fragrance)."
+                    "text": "Silaro includes several advisor tools: Collection Analysis (fragrance personality profile), Daily Recommendation (weather-based picks), Wearing Advisor (when and how to wear your fragrances), Recommendation Assistant (personalized fragrance suggestions), and Personal Notes (add your own thoughts to any fragrance)."
                 }
             },
             {
@@ -379,7 +357,7 @@
                 "name": "Does the app work offline?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Yes. Your collection, search, and lists work fully offline. Only AI-powered features (recommendations, analysis, wearing advisor) need an internet connection."
+                    "text": "Yes. Your collection, search, and lists work fully offline. Only connected features (recommendations, analysis, wearing advisor) need an internet connection."
                 }
             },
             {
@@ -387,7 +365,7 @@
                 "name": "What languages are supported?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. AI recommendations respond in your language automatically."
+                    "text": "Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. Recommendations respond in your language automatically."
                 }
             },
             {
@@ -414,8 +392,7 @@
     <nav class="nav">
         <div class="nav-content">
             <a href="../" class="logo">
-                <img src="../images/app-icon.png" alt="Silaro">
-                <span>Silaro</span>
+                <img src="../images/brand/firma-horizontal-light.svg" alt="Silaro" width="102" height="44">
             </a>
             <div class="nav-links">
                 <a href="../">Home</a>
@@ -455,7 +432,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">No. The app works fully without an account. Sign in with Google or Apple is optional, and only needed if you want cloud sync or AI-powered features.</div>
+                        <div class="faq-answer-inner">No. The app works fully without an account. Sign in with Google or Apple is optional, and only needed if you want cloud sync or personalized recommendations.</div>
                     </div>
                 </div>
 
@@ -493,7 +470,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">AI analyzes your collection to create a personal fragrance profile. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste.</div>
+                        <div class="faq-answer-inner">Silaro analyzes your collection to create a personal fragrance profile. It shows your top fragrance families, seasonal distribution, sophistication metrics, collection health score, and personalized insights about your taste.</div>
                     </div>
                 </div>
 
@@ -509,11 +486,11 @@
 
                 <div class="faq-item">
                     <button class="faq-question">
-                        What AI tools are available?
+                        What advisor tools are available?
                         <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Silaro includes several AI-powered tools: Collection Analysis (fragrance personality profile), Daily Recommendation (weather-based picks), Wearing Advisor (when and how to wear your fragrances), Recommendation Assistant (personalized fragrance suggestions), and Personal Notes (add your own thoughts to any fragrance).</div>
+                        <div class="faq-answer-inner">Silaro includes several advisor tools: Collection Analysis (fragrance personality profile), Daily Recommendation (weather-based picks), Wearing Advisor (when and how to wear your fragrances), Recommendation Assistant (personalized fragrance suggestions), and Personal Notes (add your own thoughts to any fragrance).</div>
                     </div>
                 </div>
 
@@ -523,7 +500,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Yes. Your collection, search, and lists work fully offline. Only AI-powered features (recommendations, analysis, wearing advisor) need an internet connection.</div>
+                        <div class="faq-answer-inner">Yes. Your collection, search, and lists work fully offline. Only connected features (recommendations, analysis, wearing advisor) need an internet connection.</div>
                     </div>
                 </div>
 
@@ -533,7 +510,7 @@
                         <svg class="faq-chevron" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
                     </button>
                     <div class="faq-answer">
-                        <div class="faq-answer-inner">Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. AI recommendations respond in your language automatically.</div>
+                        <div class="faq-answer-inner">Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, and Chinese. Recommendations respond in your language automatically.</div>
                     </div>
                 </div>
             </div>

@@ -1,0 +1,42 @@
+/*
+ * Silaro: tokens de marca para silaro.app (fuente única de la paleta).
+ * Paleta A «Oro afinado», modo claro (skill silaro-design, foundations §1.1).
+ * Todas las páginas cargan este archivo antes de sus estilos; no redefinir :root en otro lado.
+ */
+:root {
+    /* Superficies y texto */
+    --background: #F7F7F8;      /* bg (porcelana) */
+    --surface: #FFFFFF;         /* surface */
+    --surface-variant: #EFEFF1; /* surface2 */
+    --text-primary: #0E0E10;    /* text */
+    --text-secondary: #5E5E66;  /* text2 */
+    --text-tertiary: #5E5E66;   /* text2 (la web no tiene un tercer nivel en la app) */
+    --border: #E2E2E6;          /* border */
+
+    /* Acento: latón */
+    --accent: #8C6D33;          /* accent */
+    --accent-dark: #6B5221;     /* accentText: texto dorado y fondo profundo */
+    --accent-light: #D8BF8C;    /* oro claro: texto sobre grafito y bordes de hover */
+    --accent-muted: #EEEAE1;    /* accentMuted: fondos tonales */
+
+    /* Estados (sin cambio) */
+    --success: #1E8E3E;
+    --warning: #C37E00;
+    --error: #B00020;
+
+    /* Bloque de marca (grafito y oro del ícono, login y onboarding) */
+    --brand-graphite-top: #2C2C2F;
+    --brand-graphite-bottom: #151517;
+    --brand-gold-top: #E2CC9C;
+    --brand-gold: #B8995F;
+
+    /* Tipografía */
+    --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+
+    /* Radios */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+}

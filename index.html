@@ -39,8 +39,10 @@
     <meta name="apple-itunes-app" content="app-id=6751210763">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="images/app-icon.png">
-    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
 
     <!-- Structured Data: App -->
     <script type="application/ld+json">
@@ -49,7 +51,7 @@
         "@type": "SoftwareApplication",
         "name": "Silaro – Perfume & Fragrance App",
         "alternateName": "Silaro",
-        "description": "Silaro is a free perfume collection tracker and AI fragrance recommendation app. Organize your perfume collection, get daily fragrance recommendations based on weather and occasion, discover your fragrance personality through AI analysis, and learn about perfumery. Available in 19 languages on iOS and Android.",
+        "description": "Silaro is a free perfume collection tracker and personal fragrance advisor. Organize your perfume collection, get daily fragrance recommendations based on weather and occasion, discover your fragrance personality through collection analysis, and learn about perfumery. Available in 19 languages on iOS and Android.",
         "url": "https://silaro.app",
         "applicationCategory": "LifestyleApplication",
         "applicationSubCategory": "Perfume, Fragrance, Collection Tracker",
@@ -90,9 +92,9 @@
             "name": "Silaro",
             "url": "https://silaro.app"
         },
-        "image": "https://silaro.app/images/app-icon.png",
+        "image": "https://silaro.app/images/brand/icon-512.png",
         "inLanguage": ["en", "es", "fr", "pt", "de", "it", "nl", "pl", "tr", "ru", "ar", "hi", "ja", "ko", "zh", "da", "fi", "nb", "sv"],
-        "keywords": "perfume app, fragrance app, perfume collection tracker, fragrance collection app, AI perfume recommendations, perfume diary, fragrance organizer, perfumery app"
+        "keywords": "perfume app, fragrance app, perfume collection tracker, fragrance collection app, personalized perfume recommendations, perfume diary, fragrance organizer, perfumery app"
     }
     </script>
 
@@ -103,14 +105,14 @@
         "@type": "WebSite",
         "name": "Silaro",
         "url": "https://silaro.app",
-        "description": "Silaro – the perfume collection app with AI fragrance recommendations",
+        "description": "Silaro – the perfume collection app with a personal fragrance advisor",
         "publisher": {
             "@type": "Organization",
             "name": "Silaro",
             "url": "https://silaro.app",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://silaro.app/images/app-icon.png"
+                "url": "https://silaro.app/images/brand/icon-512.png"
             }
         }
     }
@@ -215,7 +217,7 @@
                 "name": "What languages are supported?",
                 "acceptedAnswer": {
                     "@type": "Answer",
-                    "text": "Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, Chinese, and more. The AI recommendations respond in your language automatically."
+                    "text": "Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, Chinese, and more. Recommendations respond in your language automatically."
                 }
             }
         ]
@@ -236,26 +238,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="tokens.css">
     <style>
-        :root {
-            --accent: #B68A3A;
-            --accent-light: #E7D7B0;
-            --accent-dark: #8B6914;
-            --accent-muted: #F5EDD8;
-            --background: #FCFAF7;
-            --surface: #FFFFFF;
-            --surface-variant: #F5F5F7;
-            --text-primary: #0E0E10;
-            --text-secondary: #3A3A3F;
-            --text-tertiary: #4A4A4A;
-            --border: rgba(14, 14, 16, 0.08);
-            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
@@ -297,18 +281,7 @@
             text-decoration: none;
         }
 
-        .logo img {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-        }
-
-        .logo span {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
+        .logo img { display: block; height: 44px; width: auto; }
 
         .nav-links {
             display: flex;
@@ -332,10 +305,17 @@
         }
 
         .hero-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
+            display: block;
+            height: 88px;
+            width: auto;
             margin: 0 auto 24px;
+        }
+
+        .hero-logotipo {
+            display: block;
+            height: 40px;
+            width: auto;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -788,11 +768,17 @@
         }
 
         .cta-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            margin-bottom: 12px;
+            height: 64px;
+            width: auto;
+            margin-bottom: 16px;
             position: relative;
+        }
+
+        .cta-tagline img {
+            display: block;
+            height: 26px;
+            width: auto;
+            margin: 0 auto;
         }
 
         .cta-tagline {
@@ -841,16 +827,9 @@
         }
 
         .footer-brand img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-        }
-
-        .footer-brand span {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--accent-light);
+            display: block;
+            height: 40px;
+            width: auto;
         }
 
         .footer-links {
@@ -916,8 +895,7 @@
     <nav class="nav">
         <div class="nav-content container">
             <a href="./" class="logo">
-                <img src="images/app-icon.png" alt="Silaro app icon" width="36" height="36">
-                <span>Silaro</span>
+                <img src="images/brand/firma-horizontal-light.svg" alt="Silaro" width="102" height="44">
             </a>
             <div class="nav-links">
                 <a href="#features">Features</a>
@@ -931,8 +909,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <img src="images/app-icon.png" alt="Silaro fragrance companion app" class="hero-icon" width="72" height="72">
-            <h1>Silaro</h1>
+            <img src="images/brand/simbolo-light.svg" alt="" class="hero-icon" width="56" height="88">
+            <h1><img src="images/brand/logotipo-grafito.svg" alt="Silaro" class="hero-logotipo" width="184" height="40"></h1>
             <p class="hero-hook">Your scent is the first thing people remember about you. Make every choice count.</p>
             <div class="store-badges">
                 <a href="https://apps.apple.com/us/app/silaro/id6751210763" data-store="apple" data-location="hero">
@@ -1004,7 +982,7 @@
                         <svg viewBox="0 0 24 24"><path d="M18 20V10M12 20V4M6 20v-6"/></svg>
                     </div>
                     <h3>Collection Analysis</h3>
-                    <p>Discover your fragrance personality. AI analyzes your collection to reveal your style, top fragrance families, and seasonal profile.</p>
+                    <p>Discover your fragrance personality. Silaro analyzes your collection to reveal your style, top fragrance families, and seasonal profile.</p>
                 </div>
 
                 <div class="feature-card">
@@ -1064,9 +1042,9 @@
             <div class="about-seo-inner">
                 <h2>The perfume collection app built for fragrance lovers</h2>
                 <p>Silaro is the most complete <strong>perfume collection tracker</strong> available on iOS and Android. Whether you own 5 bottles or 500, Silaro keeps your entire fragrance wardrobe organized, searchable, and always with you.</p>
-                <p>Beyond collection management, Silaro's AI acts as a personal fragrance advisor. Tell it your plans for the day — a job interview, a weekend hike, a dinner date — and it picks the perfect scent from your collection based on the weather, the occasion, and your style. No more grabbing the same bottle out of habit.</p>
+                <p>Beyond collection management, Silaro acts as a personal fragrance advisor. Tell it your plans for the day — a job interview, a weekend hike, a dinner date — and it picks the perfect scent from your collection based on the weather, the occasion, and your style. No more grabbing the same bottle out of habit.</p>
                 <p>Curious about <strong>what fragrance notes</strong> you're drawn to? Silaro analyzes your entire collection and builds a detailed <strong>fragrance personality profile</strong>: your dominant scent families, your seasonal preferences, the sophistication level of your taste, and more. It's the kind of insight that takes years of self-awareness — delivered in seconds.</p>
-                <p>With a searchable database of <strong>77,000+ perfumes</strong> from every brand imaginable, Silaro also helps you find your next favorite fragrance before you buy. The AI recommendation wizard narrows thousands of options down to a handful of perfect matches — so you shop smarter and love every bottle you add.</p>
+                <p>With a searchable database of <strong>77,000+ perfumes</strong> from every brand imaginable, Silaro also helps you find your next favorite fragrance before you buy. The recommendation wizard narrows thousands of options down to a handful of perfect matches — so you shop smarter and love every bottle you add.</p>
             </div>
         </div>
     </section>
@@ -1284,7 +1262,7 @@
                     </button>
                     <div class="faq-answer">
                         <div class="faq-answer-inner">
-                            Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, Chinese, and more. The AI recommendations respond in your language automatically.
+                            Silaro is available in 19 languages including English, Spanish, French, Portuguese, German, Italian, Arabic, Japanese, Korean, Chinese, and more. Recommendations respond in your language automatically.
                         </div>
                     </div>
                 </div>
@@ -1295,8 +1273,8 @@
     <!-- Download CTA -->
     <section class="download-cta">
         <div class="container">
-            <img src="images/app-icon.png" alt="Silaro app icon" class="cta-icon" width="56" height="56">
-            <p class="cta-tagline">Silaro</p>
+            <img src="images/brand/simbolo-white.svg" alt="" class="cta-icon" width="41" height="64">
+            <p class="cta-tagline"><img src="images/brand/logotipo-blanco.svg" alt="Silaro" width="120" height="26"></p>
             <h2>Your scent arrives before you do.</h2>
             <p>Make it the right one. Organize your collection, discover what to wear, and track your scent story over time.</p>
             <div class="store-badges">
@@ -1315,8 +1293,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="images/app-icon.png" alt="Silaro" width="32" height="32">
-                    <span>Silaro</span>
+                    <img src="images/brand/firma-horizontal-dark.svg" alt="Silaro" width="93" height="40">
                 </div>
                 <div class="footer-links">
                     <a href="support/">Support</a>
