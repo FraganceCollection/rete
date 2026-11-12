@@ -147,12 +147,11 @@
   }
 
   function pickLang() {
-    var candidates = [queryLang, navigator.language || ''];
-    for (var i = 0; i < candidates.length; i++) {
-      var base = candidates[i].toLowerCase().split(/[-_]/)[0];
-      if (STRINGS[base]) return base;
-    }
-    return 'en';
+    // F-d (03z3): the app's language wins; one the site lacks falls back to
+    // English, not to the browser. navigator.language only when no ?lang=.
+    var source = queryLang || navigator.language || '';
+    var base = source.toLowerCase().split(/[-_]/)[0];
+    return STRINGS[base] ? base : 'en';
   }
 
   var lang = pickLang();
@@ -285,6 +284,7 @@
           referenceEl.textContent = String(body.data.id);
           form.hidden = true;
           successEl.hidden = false;
+          successEl.focus();
           return;
         }
         setBusy(false);
