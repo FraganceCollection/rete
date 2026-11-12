@@ -1,149 +1,85 @@
 <!DOCTYPE html>
-<html>
+<!--
+  Plantilla de images/og-image.jpg (1200x630). No se publica como página (robots/sitemap no la enlazan).
+  Regenerar: abrir en Chrome headless a 1200x630 y guardar como JPG (ver PR de marca fase 3).
+  Colores: bloque de marca de tokens.css (grafito + oro). Sin capturas: se rehacen con la UI 3.3.0.
+-->
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;700;800&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
     width: 1200px;
     height: 630px;
     overflow: hidden;
-    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-    background: linear-gradient(135deg, #FCFAF7 0%, #F5EDD8 50%, #EED9A0 100%);
-    display: flex;
-    align-items: center;
+    font-family: var(--font-body);
+    background: linear-gradient(180deg, var(--brand-graphite-top) 0%, var(--brand-graphite-bottom) 100%);
+    color: #FFFFFF;
     position: relative;
-  }
-  .left-bar {
-    position: absolute;
-    left: 0; top: 0; bottom: 0;
-    width: 6px;
-    background: #B68A3A;
   }
   .content {
     display: flex;
     align-items: center;
-    width: 100%;
-    padding: 56px 64px 56px 80px;
-    gap: 64px;
+    justify-content: space-between;
+    height: 100%;
+    padding: 0 104px 0 96px;
   }
-  .text-side {
-    flex: 1;
-  }
-  .brand-row {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin-bottom: 32px;
-  }
-  .brand-icon {
-    width: 64px;
-    height: 64px;
-    border-radius: 16px;
-    object-fit: cover;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
-  }
-  .brand-name {
-    font-size: 2.4rem;
-    font-weight: 800;
-    color: #B68A3A;
-    letter-spacing: -1px;
-  }
+  .logotipo { display: block; height: 34px; width: auto; margin-bottom: 44px; }
   h1 {
-    font-size: 2.8rem;
+    font-family: var(--font-heading);
+    font-size: 68px;
     font-weight: 800;
-    color: #0E0E10;
-    line-height: 1.15;
-    margin-bottom: 20px;
-    letter-spacing: -1px;
+    line-height: 1.05;
+    letter-spacing: -1.5px;
+    margin-bottom: 22px;
   }
   .subtitle {
-    font-size: 1.15rem;
-    color: #3A3A3F;
-    line-height: 1.6;
-    margin-bottom: 32px;
+    font-size: 24px;
+    line-height: 1.45;
+    color: rgba(255, 255, 255, 0.72);
+    max-width: 560px;
+    margin-bottom: 40px;
   }
-  .pills {
+  .facts {
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 32px;
-  }
-  .pill {
-    background: rgba(182,138,58,0.12);
-    border: 1.5px solid rgba(182,138,58,0.4);
-    color: #8B6914;
-    padding: 6px 16px;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: 600;
-  }
-  .badge {
-    display: inline-block;
-    background: #0E0E10;
-    color: white;
-    padding: 10px 24px;
-    border-radius: 10px;
-    font-size: 1rem;
-    font-weight: 600;
-  }
-  .badge span {
-    opacity: 0.65;
-    font-weight: 400;
-  }
-  .image-side {
-    flex-shrink: 0;
-    width: 240px;
-    display: flex;
-    flex-direction: column;
     gap: 12px;
   }
-  .screenshot {
-    width: 240px;
-    border-radius: 16px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.20);
-    object-fit: cover;
-    height: 200px;
+  .fact {
+    font-size: 17px;
+    font-weight: 500;
+    color: var(--brand-gold-top);
+    border: 1.5px solid rgba(184, 153, 95, 0.45);
+    padding: 8px 18px;
+    border-radius: 999px;
   }
-  .screenshot2 {
-    width: 240px;
-    border-radius: 16px;
-    box-shadow: 0 16px 48px rgba(0,0,0,0.15);
-    object-fit: cover;
-    height: 180px;
-  }
+  .simbolo { display: block; height: 400px; width: auto; }
   .domain {
     position: absolute;
-    bottom: 24px;
-    right: 32px;
-    font-size: 0.85rem;
-    color: #999;
+    bottom: 36px;
+    right: 104px;
+    font-size: 17px;
     font-weight: 500;
+    color: rgba(255, 255, 255, 0.5);
   }
 </style>
 </head>
 <body>
-  <div class="left-bar"></div>
   <div class="content">
     <div class="text-side">
-      <div class="brand-row">
-        <img class="brand-icon" src="images/app-icon.png" alt="Silaro">
-        <div class="brand-name">Silaro</div>
+      <img class="logotipo" src="images/brand/logotipo-oro.svg" alt="Silaro">
+      <h1>Wear well.<br>Buy well.</h1>
+      <p class="subtitle">Your collection and a personal fragrance advisor.</p>
+      <div class="facts">
+        <span class="fact">78,000 perfumes</span>
+        <span class="fact">19 languages</span>
+        <span class="fact">iOS &amp; Android</span>
       </div>
-      <h1>Your Fragrance<br>Companion</h1>
-      <p class="subtitle">Track your perfume collection, get AI-powered<br>daily recommendations, and discover new scents.</p>
-      <div class="pills">
-        <span class="pill">77,000+ perfumes</span>
-        <span class="pill">AI recommendations</span>
-        <span class="pill">19 languages</span>
-        <span class="pill">Free</span>
-      </div>
-      <div class="badge">Free on iOS &amp; Android <span>→ silaro.app</span></div>
     </div>
-    <div class="image-side">
-      <img class="screenshot" src="images/collection.png" alt="">
-      <img class="screenshot2" src="images/daily-recommendation.png" alt="">
-    </div>
+    <img class="simbolo" src="images/brand/simbolo-dark.svg" alt="">
   </div>
   <div class="domain">silaro.app</div>
 </body>

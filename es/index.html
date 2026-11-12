@@ -39,8 +39,10 @@
     <meta name="apple-itunes-app" content="app-id=6751210763">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="../images/app-icon.png">
-    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="32x32">
+    <link rel="icon" href="../images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
 
     <!-- Structured Data: App -->
     <script type="application/ld+json">
@@ -90,7 +92,7 @@
             "name": "Silaro",
             "url": "https://silaro.app"
         },
-        "image": "https://silaro.app/images/app-icon.png",
+        "image": "https://silaro.app/images/brand/icon-512.png",
         "inLanguage": ["en", "es", "fr", "pt", "de", "it", "nl", "pl", "tr", "ru", "ar", "hi", "ja", "ko", "zh", "da", "fi", "nb", "sv"],
         "keywords": "app de perfumes, app de fragancias, seguimiento de colección de perfumes, app para colección de fragancias, recomendaciones de perfumes con IA, diario de perfumes, organizador de fragancias, app de perfumería"
     }
@@ -110,7 +112,7 @@
             "url": "https://silaro.app",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://silaro.app/images/app-icon.png"
+                "url": "https://silaro.app/images/brand/icon-512.png"
             }
         }
     }
@@ -236,26 +238,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../tokens.css">
     <style>
-        :root {
-            --accent: #B68A3A;
-            --accent-light: #E7D7B0;
-            --accent-dark: #8B6914;
-            --accent-muted: #F5EDD8;
-            --background: #FCFAF7;
-            --surface: #FFFFFF;
-            --surface-variant: #F5F5F7;
-            --text-primary: #0E0E10;
-            --text-secondary: #3A3A3F;
-            --text-tertiary: #4A4A4A;
-            --border: rgba(14, 14, 16, 0.08);
-            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
@@ -297,18 +281,7 @@
             text-decoration: none;
         }
 
-        .logo img {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-        }
-
-        .logo span {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
+        .logo img { display: block; height: 44px; width: auto; }
 
         .nav-links {
             display: flex;
@@ -332,10 +305,17 @@
         }
 
         .hero-icon {
-            width: 72px;
-            height: 72px;
-            border-radius: 18px;
+            display: block;
+            height: 88px;
+            width: auto;
             margin: 0 auto 24px;
+        }
+
+        .hero-logotipo {
+            display: block;
+            height: 40px;
+            width: auto;
+            margin: 0 auto;
         }
 
         .hero h1 {
@@ -788,11 +768,17 @@
         }
 
         .cta-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 14px;
-            margin-bottom: 12px;
+            height: 64px;
+            width: auto;
+            margin-bottom: 16px;
             position: relative;
+        }
+
+        .cta-tagline img {
+            display: block;
+            height: 26px;
+            width: auto;
+            margin: 0 auto;
         }
 
         .cta-tagline {
@@ -841,16 +827,9 @@
         }
 
         .footer-brand img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-        }
-
-        .footer-brand span {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--accent-light);
+            display: block;
+            height: 40px;
+            width: auto;
         }
 
         .footer-links {
@@ -916,8 +895,7 @@
     <nav class="nav">
         <div class="nav-content container">
             <a href="../" class="logo">
-                <img src="../images/app-icon.png" alt="Icono de la app Silaro" width="36" height="36">
-                <span>Silaro</span>
+                <img src="../images/brand/firma-horizontal-light.svg" alt="Silaro" width="102" height="44">
             </a>
             <div class="nav-links">
                 <a href="#features">Funciones</a>
@@ -931,8 +909,8 @@
     <!-- Hero -->
     <section class="hero">
         <div class="container">
-            <img src="../images/app-icon.png" alt="App Silaro, tu compañero de fragancias" class="hero-icon" width="72" height="72">
-            <h1>Silaro</h1>
+            <img src="../images/brand/simbolo-light.svg" alt="" class="hero-icon" width="56" height="88">
+            <h1><img src="../images/brand/logotipo-grafito.svg" alt="Silaro" class="hero-logotipo" width="184" height="40"></h1>
             <p class="hero-hook">No llevarías un traje a la playa.<br>¿Por qué usar la misma fragancia en todas partes?</p>
             <p>Tu fragancia es lo primero que la gente recuerda de ti. Haz que cada elección cuente.</p>
             <div class="store-badges">
@@ -1273,8 +1251,8 @@
     <section class="download-cta">
         <div class="container">
             <h2>Comienza tu viaje olfativo</h2>
-            <img src="../images/app-icon.png" alt="Icono de la app Silaro" class="cta-icon" width="56" height="56">
-            <p class="cta-tagline">Silaro</p>
+            <img src="../images/brand/simbolo-white.svg" alt="" class="cta-icon" width="41" height="64">
+            <p class="cta-tagline"><img src="../images/brand/logotipo-blanco.svg" alt="Silaro" width="120" height="26"></p>
             <p>Tu compañero personal de fragancias. Organiza tu colección, descubre qué ponerte y aprende perfumería.</p>
             <div class="store-badges">
                 <a href="https://apps.apple.com/us/app/silaro/id6751210763" data-store="apple" data-location="cta">
@@ -1292,8 +1270,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="../images/app-icon.png" alt="Silaro" width="32" height="32">
-                    <span>Silaro</span>
+                    <img src="../images/brand/firma-horizontal-dark.svg" alt="Silaro" width="93" height="40">
                 </div>
                 <div class="footer-links">
                     <a href="../support/">Soporte</a>

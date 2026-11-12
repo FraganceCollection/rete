@@ -12,14 +12,14 @@
     <meta property="og:url" content="https://silaro.app/about/">
     <meta property="og:title" content="About - Silaro">
     <meta property="og:description" content="About Silaro - Your personal fragrance companion app.">
-    <meta property="og:image" content="https://silaro.app/images/app-icon.png">
+    <meta property="og:image" content="https://silaro.app/images/og-image.jpg">
     <meta property="og:site_name" content="Silaro">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="About - Silaro">
     <meta name="twitter:description" content="About Silaro - Your personal fragrance companion app.">
-    <meta name="twitter:image" content="https://silaro.app/images/app-icon.png">
+    <meta name="twitter:image" content="https://silaro.app/images/og-image.jpg">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6KQWNR8C5"></script>
@@ -30,28 +30,16 @@
         gtag('config', 'G-J6KQWNR8C5');
     </script>
 
-    <link rel="icon" type="image/png" href="../images/app-icon.png">
-    <link rel="apple-touch-icon" href="../images/app-icon.png">
+    <link rel="icon" href="../favicon.ico" sizes="32x32">
+    <link rel="icon" href="../images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/brand/apple-touch-icon.png">
+    <link rel="manifest" href="../site.webmanifest">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../tokens.css">
     <style>
-        :root {
-            --accent: #B68A3A;
-            --accent-light: #E7D7B0;
-            --accent-dark: #8B6914;
-            --accent-muted: #F5EDD8;
-            --background: #FCFAF7;
-            --surface: #FFFFFF;
-            --text-primary: #0E0E10;
-            --text-secondary: #3A3A3F;
-            --border: rgba(14, 14, 16, 0.08);
-            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -91,14 +79,7 @@
             text-decoration: none;
         }
 
-        .logo img { width: 32px; height: 32px; border-radius: 8px; }
-
-        .logo span {
-            font-family: var(--font-heading);
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
+        .logo img { display: block; height: 44px; width: auto; }
 
         .nav-links a {
             color: var(--text-secondary);
@@ -115,9 +96,8 @@
         }
 
         .content img {
-            width: 80px;
-            height: 80px;
-            border-radius: 20px;
+            height: 88px;
+            width: auto;
             margin-bottom: 24px;
         }
 
@@ -193,8 +173,7 @@
     <nav class="nav">
         <div class="nav-content">
             <a href="../" class="logo">
-                <img src="../images/app-icon.png" alt="Silaro">
-                <span>Silaro</span>
+                <img src="../images/brand/firma-horizontal-light.svg" alt="Silaro" width="102" height="44">
             </a>
             <div class="nav-links">
                 <a href="../">Home</a>
@@ -204,7 +183,7 @@
 
     <main class="content">
         <div class="container">
-            <img src="../images/app-icon.png" alt="Silaro">
+            <img src="../images/brand/simbolo-light.svg" alt="" width="56" height="88">
             <h1>About Silaro</h1>
             <p>
                 Silaro is a mobile app for fragrance enthusiasts. It helps you organize your perfume collection, get AI-powered recommendations based on weather and occasion, discover your fragrance personality through collection analysis, and learn about perfumery.

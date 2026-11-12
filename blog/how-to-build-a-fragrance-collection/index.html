@@ -30,8 +30,10 @@
     <meta name="twitter:image" content="https://silaro.app/images/og-image.jpg">
 
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://silaro.app/images/app-icon.png">
-    <link rel="apple-touch-icon" href="https://silaro.app/images/app-icon.png">
+    <link rel="icon" href="../../favicon.ico" sizes="32x32">
+    <link rel="icon" href="../../images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../../images/brand/apple-touch-icon.png">
+    <link rel="manifest" href="../../site.webmanifest">
 
     <!-- Article Schema -->
     <script type="application/ld+json">
@@ -53,7 +55,7 @@
             "url": "https://silaro.app",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://silaro.app/images/app-icon.png"
+                "url": "https://silaro.app/images/brand/icon-512.png"
             }
         },
         "mainEntityOfPage": {
@@ -106,26 +108,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
 
+    <link rel="stylesheet" href="../../tokens.css">
     <style>
-        :root {
-            --accent: #B68A3A;
-            --accent-light: #E7D7B0;
-            --accent-dark: #8B6914;
-            --accent-muted: #F5EDD8;
-            --background: #FCFAF7;
-            --surface: #FFFFFF;
-            --surface-variant: #F5F5F7;
-            --text-primary: #0E0E10;
-            --text-secondary: #3A3A3F;
-            --text-tertiary: #4A4A4A;
-            --border: rgba(14, 14, 16, 0.08);
-            --font-heading: 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif;
-            --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --radius-sm: 8px;
-            --radius-md: 12px;
-            --radius-lg: 16px;
-            --radius-xl: 20px;
-        }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -166,18 +150,7 @@
             text-decoration: none;
         }
 
-        .logo img {
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
-        }
-
-        .logo span {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--accent);
-        }
+        .logo img { display: block; height: 44px; width: auto; }
 
         .nav-links {
             display: flex;
@@ -455,16 +428,9 @@
         }
 
         .footer-brand img {
-            width: 32px;
-            height: 32px;
-            border-radius: 8px;
-        }
-
-        .footer-brand span {
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--accent-light);
+            display: block;
+            height: 40px;
+            width: auto;
         }
 
         .footer-links {
@@ -530,8 +496,7 @@
     <nav class="nav">
         <div class="nav-content container">
             <a href="https://silaro.app/" class="logo">
-                <img src="https://silaro.app/images/app-icon.png" alt="Silaro app icon" width="36" height="36">
-                <span>Silaro</span>
+                <img src="../../images/brand/firma-horizontal-light.svg" alt="Silaro" width="102" height="44">
             </a>
             <div class="nav-links">
                 <a href="https://silaro.app/#features">Features</a>
@@ -704,8 +669,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-brand">
-                    <img src="https://silaro.app/images/app-icon.png" alt="Silaro" width="32" height="32">
-                    <span>Silaro</span>
+                    <img src="../../images/brand/firma-horizontal-dark.svg" alt="Silaro" width="93" height="40">
                 </div>
                 <div class="footer-links">
                     <a href="https://silaro.app/support/">Support</a>

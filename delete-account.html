@@ -12,14 +12,14 @@
     <meta property="og:url" content="https://silaro.app/delete-account.html">
     <meta property="og:title" content="Delete Your Account - Silaro">
     <meta property="og:description" content="Request deletion of your Silaro account and associated data.">
-    <meta property="og:image" content="https://silaro.app/images/app-icon.png">
+    <meta property="og:image" content="https://silaro.app/images/og-image.jpg">
     <meta property="og:site_name" content="Silaro">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Delete Your Account - Silaro">
     <meta name="twitter:description" content="Request deletion of your Silaro account and associated data.">
-    <meta name="twitter:image" content="https://silaro.app/images/app-icon.png">
+    <meta name="twitter:image" content="https://silaro.app/images/og-image.jpg">
 
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-J6KQWNR8C5"></script>
@@ -30,8 +30,11 @@
         gtag('config', 'G-J6KQWNR8C5');
     </script>
 
-    <link rel="icon" type="image/png" href="images/app-icon.png">
-    <link rel="apple-touch-icon" href="images/app-icon.png">
+    <link rel="icon" href="favicon.ico" sizes="32x32">
+    <link rel="icon" href="images/brand/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="images/brand/apple-touch-icon.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="stylesheet" href="tokens.css">
     <link rel="stylesheet" href="styles.css">
 
     <style>
@@ -103,7 +106,7 @@
         .delete-btn:hover {
             background: var(--accent-dark);
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(182, 138, 58, 0.3);
+            box-shadow: 0 4px 12px rgba(140, 109, 51, 0.3);
         }
 
         .contact-btn {
@@ -127,7 +130,7 @@
         }
 
         .warning-note {
-            background: #FEF7E8;
+            background: var(--accent-muted);
             padding: 20px 24px;
             border-radius: var(--radius-md);
             margin: 24px 0;
@@ -154,8 +157,7 @@
     <nav class="nav">
         <div class="nav-content container">
             <a href="./" class="logo" style="display:flex;align-items:center;gap:10px;text-decoration:none">
-                <img src="images/app-icon.png" alt="Silaro" style="width:32px;height:32px;border-radius:8px">
-                <span style="font-family:'Manrope',sans-serif;font-size:1.2rem;font-weight:700;color:#B68A3A">Silaro</span>
+                <img src="images/brand/firma-horizontal-light.svg" alt="Silaro" width="102" height="44" style="display:block;height:44px;width:auto">
             </a>
             <div class="nav-links">
                 <a href="./">Home</a>
